@@ -1072,6 +1072,11 @@ gtk_gen_headers = [
   gtkversion,
 ]
 
+font_script_language_sources = files([
+  'language-names.c',
+  'script-names.c',
+])
+
 gtk_sources += [
   gtk_a11y_src,
   gtk_dbus_src,
@@ -1081,6 +1086,7 @@ gtk_sources += [
   gtkmarshalers,
   gtkprivatetypebuiltins,
   gtktypebuiltins,
+  font_script_language_sources,
 ]
 
 gtk_deps = [
@@ -1096,14 +1102,6 @@ gtk_deps = [
   libm,
   graphene_dep,
 ]
-
-if harfbuzz_dep.found() and pangoft_dep.found()
-  gtk_deps += [ harfbuzz_dep, pangoft_dep ]
-  gtk_sources += files([
-  'language-names.c',
-  'script-names.c',
-  ])
-endif
 
 if x11_enabled
   x11_data_prefix = dependency('x11').get_variable(pkgconfig: 'prefix')
