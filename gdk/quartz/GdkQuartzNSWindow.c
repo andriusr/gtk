@@ -806,6 +806,7 @@ update_context_from_dragging_info (id <NSDraggingInfo> sender)
   _gdk_quartz_drag_source_context_destroy_gtk_only ();
 }
 
+
 #ifdef AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER
 #if MAC_OS_X_VERSION_MIN_REQUIRED < 101200
 typedef enum

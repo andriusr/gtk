@@ -41,19 +41,18 @@ print_double (const char *description,
               double      value)
 {
   if (machine_readable)
-    g_print ("%g\t", value);
+    g_print ("%g,", value);
   else
     g_print ("%s: %g\n", description, value);
 }
 
 static void
-print_variable (const char *description,
-                Variable *variable)
+print_variable (const char *description, Variable *variable)
 {
   if (variable->weight != 0)
     {
       if (machine_readable)
-        g_print ("%g\t%g\t",
+        g_print ("\t%g\t%g\t",
                  variable_mean (variable),
                  variable_standard_deviation (variable));
       else
@@ -64,7 +63,7 @@ print_variable (const char *description,
   else
     {
       if (machine_readable)
-        g_print ("-\t-\t");
+        g_print ("\t-\t\t-\t");
       else
         g_print ("%s: <n/a>\n", description);
     }
@@ -84,7 +83,7 @@ on_frame_clock_after_paint (GdkFrameClock *frame_clock,
         {
           if (frame_stats->num_stats == 0 && machine_readable)
             {
-              g_print ("# load_factor frame_rate latency\n");
+              g_print ("Frame Rate\n");// Latency Mean\tStdDev\n");
             }
 
           frame_stats->num_stats++;
@@ -92,7 +91,7 @@ on_frame_clock_after_paint (GdkFrameClock *frame_clock,
                         frame_stats->frames_since_last_print /
                         ((current_time - frame_stats->last_print_time) / 1000000.));
 
-          print_variable ("Latency", &frame_stats->latency);
+//          print_variable ("Latency", &frame_stats->latency);
 
           g_print ("\n");
         }
