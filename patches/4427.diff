@@ -1,0 +1,930 @@
+diff --git a/gdk/quartz/GdkQuartzView.c b/gdk/quartz/GdkQuartzView.c
+index c20c5de83af8a91b745c48343e242c20df4a47d5..3fb5f196dafc4d0a6729e4e9b76e0883cfd8480d 100644
+--- a/gdk/quartz/GdkQuartzView.c
++++ b/gdk/quartz/GdkQuartzView.c
+@@ -311,10 +311,6 @@
+ {
+   GdkRectangle gdk_rect;
+   GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (gdk_window->impl);
+-  const NSRect *drawn_rects;
+-  NSInteger count;
+-  int i;
+-  cairo_region_t *region;
+ 
+   if (GDK_WINDOW_DESTROYED (gdk_window))
+     return;
+@@ -344,31 +340,39 @@
+       return;
+     }
+ 
+-  /* Clear our own bookkeeping of regions that need display */
+   if (impl->needs_display_region)
+     {
++      _gdk_window_process_updates_recurse (gdk_window,
++                                           impl->needs_display_region);
+       cairo_region_destroy (impl->needs_display_region);
+       impl->needs_display_region = NULL;
+     }
++  else
++    {
++      const NSRect *drawn_rects;
++      NSInteger count;
++      int i;
++      cairo_region_t *region;
+ 
+-  [self getRectsBeingDrawn: &drawn_rects count: &count];
+-  region = cairo_region_create ();
++      [self getRectsBeingDrawn: &drawn_rects count: &count];
++      region = cairo_region_create ();
+ 
+-  for (i = 0; i < count; i++)
+-    {
+-      gdk_rect.x = drawn_rects[i].origin.x;
+-      gdk_rect.y = drawn_rects[i].origin.y;
+-      gdk_rect.width = drawn_rects[i].size.width;
+-      gdk_rect.height = drawn_rects[i].size.height;
++      for (i = 0; i < count; i++)
++        {
++          gdk_rect.x = drawn_rects[i].origin.x;
++          gdk_rect.y = drawn_rects[i].origin.y;
++          gdk_rect.width = drawn_rects[i].size.width;
++          gdk_rect.height = drawn_rects[i].size.height;
+ 
+-      cairo_region_union_rectangle (region, &gdk_rect);
+-    }
++          cairo_region_union_rectangle (region, &gdk_rect);
++        }
+ 
+-  impl->in_paint_rect_count++;
+-  _gdk_window_process_updates_recurse (gdk_window, region);
+-  impl->in_paint_rect_count--;
++      impl->in_paint_rect_count++;
++      _gdk_window_process_updates_recurse (gdk_window, region);
++      impl->in_paint_rect_count--;
+ 
+-  cairo_region_destroy (region);
++      cairo_region_destroy (region);
++    }
+ 
+   if (needsInvalidateShadow)
+     {
+diff --git a/gdk/quartz/Makefile.am b/gdk/quartz/Makefile.am
+index 4782c5aab6fc228d0a1afbdf8f6d03ac998b7362..bbe74c57eba9acf85bb9ce398693847be2699503 100644
+--- a/gdk/quartz/Makefile.am
++++ b/gdk/quartz/Makefile.am
+@@ -30,6 +30,8 @@ libgdk_quartz_la_SOURCES =    	\
+ 	gdkdevicemanager-core-quartz.h	\
+ 	gdkdisplay-quartz.c	\
+ 	gdkdisplay-quartz.h	\
++	gdkdisplaylinksource.c	\
++	gdkdisplaylinksource.h	\
+ 	gdkdisplaymanager-quartz.c	\
+ 	gdkdnd-quartz.c		\
+ 	gdkdnd-quartz.h		\
+diff --git a/gdk/quartz/gdkdisplay-quartz.c b/gdk/quartz/gdkdisplay-quartz.c
+index 0587ca8f2f5abcc310b880067341dbe9d3530698..53726e38b633fae86081e4e22905da3d3e76d883 100644
+--- a/gdk/quartz/gdkdisplay-quartz.c
++++ b/gdk/quartz/gdkdisplay-quartz.c
+@@ -21,6 +21,7 @@
+ #include <gdk/gdk.h>
+ #include <gdk/gdkdisplayprivate.h>
+ #include <gdk/gdkmonitorprivate.h>
++#include <gdk/gdkframeclockprivate.h>
+ 
+ #include "gdkprivate-quartz.h"
+ #include "gdkquartzscreen.h"
+@@ -29,6 +30,7 @@
+ #include "gdkquartzdevicemanager-core.h"
+ #include "gdkscreen.h"
+ #include "gdkmonitorprivate.h"
++#include "gdkdisplaylinksource.h"
+ #include "gdkdisplay-quartz.h"
+ #include "gdkmonitor-quartz.h"
+ #include "gdkglcontext-quartz.h"
+@@ -84,6 +86,112 @@ _gdk_device_manager_new (GdkDisplay *display)
+                        NULL);
+ }
+ 
++void
++_gdk_quartz_display_add_frame_callback (GdkDisplay             *display,
++                                        GdkWindow              *window)
++{
++  GdkQuartzDisplay *display_quartz;
++  GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
++
++  display_quartz = GDK_QUARTZ_DISPLAY (display);
++
++  impl->frame_link.data = window;
++  impl->frame_link.prev = NULL;
++  impl->frame_link.next = display_quartz->windows_awaiting_frame;
++
++  display_quartz->windows_awaiting_frame = &impl->frame_link;
++
++  if (impl->frame_link.next == NULL)
++    gdk_display_link_source_unpause ((GdkDisplayLinkSource *)display_quartz->frame_source);
++}
++
++void
++_gdk_quartz_display_remove_frame_callback (GdkDisplay             *display,
++                                           GdkWindow              *window)
++{
++  GdkQuartzDisplay *display_quartz = GDK_QUARTZ_DISPLAY (display);
++  GList *link;
++
++  link = g_list_find (display_quartz->windows_awaiting_frame, window);
++
++  if (link != NULL)
++    {
++      display_quartz->windows_awaiting_frame =
++        g_list_remove_link (display_quartz->windows_awaiting_frame, link);
++    }
++
++  if (display_quartz->windows_awaiting_frame == NULL)
++    gdk_display_link_source_pause ((GdkDisplayLinkSource *)display_quartz->frame_source);
++}
++
++static gboolean
++gdk_quartz_display_frame_cb (gpointer data)
++{
++  GdkDisplayLinkSource *source;
++  GdkQuartzDisplay *display_quartz = data;
++  GList *iter;
++  gint64 presentation_time;
++  gint64 now;
++
++  source = (GdkDisplayLinkSource *)display_quartz->frame_source;
++
++  iter = display_quartz->windows_awaiting_frame;
++  display_quartz->windows_awaiting_frame = NULL;
++
++  if (iter == NULL)
++    {
++      gdk_display_link_source_pause (source);
++      return G_SOURCE_CONTINUE;
++    }
++
++  presentation_time = source->presentation_time;
++  now = g_source_get_time (display_quartz->frame_source);
++
++  for (; iter != NULL; iter = iter->next)
++    {
++      GdkWindow *window = iter->data;
++      GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
++      GdkFrameClock *frame_clock = gdk_window_get_frame_clock (window);
++      GdkFrameTimings *timings;
++
++      if (frame_clock == NULL)
++        continue;
++
++      _gdk_frame_clock_thaw (frame_clock);
++
++      if (impl->pending_frame_counter)
++        {
++          timings = gdk_frame_clock_get_timings (frame_clock, impl->pending_frame_counter);
++          if (timings != NULL)
++            timings->presentation_time = presentation_time - source->refresh_interval;
++          impl->pending_frame_counter = 0;
++        }
++
++      timings = gdk_frame_clock_get_current_timings (frame_clock);
++
++      if (timings != NULL)
++        {
++          timings->refresh_interval = source->refresh_interval;
++          timings->predicted_presentation_time = source->presentation_time;
++        }
++    }
++
++  return G_SOURCE_CONTINUE;
++}
++
++static void
++gdk_quartz_display_init_display_link (GdkDisplay *display)
++{
++  GdkQuartzDisplay *display_quartz = GDK_QUARTZ_DISPLAY (display);
++
++  display_quartz->frame_source = gdk_display_link_source_new ();
++  g_source_set_callback (display_quartz->frame_source,
++                         gdk_quartz_display_frame_cb,
++                         display,
++                         NULL);
++  g_source_attach (display_quartz->frame_source, NULL);
++}
++
+ GdkDisplay *
+ _gdk_quartz_display_open (const gchar *display_name)
+ {
+@@ -102,6 +210,8 @@ _gdk_quartz_display_open (const gchar *display_name)
+ 
+   /* Initialize application */
+   [NSApplication sharedApplication];
++  gdk_quartz_display_init_display_link (_gdk_display);
++
+ #if 0
+   /* FIXME: Remove the #if 0 when we have these functions */
+   _gdk_quartz_dnd_init ();
+diff --git a/gdk/quartz/gdkdisplay-quartz.h b/gdk/quartz/gdkdisplay-quartz.h
+index 66cfe4271e857269bac2ccc27995fa254641ab5b..59245da7cad8460e4910c9b714d33c1e2796e517 100644
+--- a/gdk/quartz/gdkdisplay-quartz.h
++++ b/gdk/quartz/gdkdisplay-quartz.h
+@@ -37,6 +37,10 @@ struct _GdkQuartzDisplay
+   NSRect geometry; /* In AppKit coordinates. */
+   NSSize size; /* Aggregate size of displays in millimeters. */
+   GPtrArray *monitors;
++  /* This structure is not allocated. It points to an embedded
++   * GList in the GdkWindow. */
++  GList   *windows_awaiting_frame;
++  GSource *frame_source;
+ };
+ 
+ struct _GdkQuartzDisplayClass
+diff --git a/gdk/quartz/gdkdisplaylinksource.c b/gdk/quartz/gdkdisplaylinksource.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..b59c121945a12c440c22ae75c7bf568ab044037c
+--- /dev/null
++++ b/gdk/quartz/gdkdisplaylinksource.c
+@@ -0,0 +1,251 @@
++/* gdkdisplaylinksource.c
++ *
++ * Copyright (C) 2015 Christian Hergert <christian@hergert.me>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
++ *
++ * Authors:
++ *   Christian Hergert <christian@hergert.me>
++ */
++
++#include "config.h"
++
++#include <mach/mach_time.h>
++
++#include "gdkinternal-quartz.h"
++#include "gdkdisplaylinksource.h"
++
++static gint64 host_to_frame_clock_time (gint64 host_time);
++
++static gboolean
++gdk_display_link_source_prepare (GSource *source,
++                                 gint    *timeout_)
++{
++  GdkDisplayLinkSource *impl = (GdkDisplayLinkSource *)source;
++  gint64 now;
++
++  now = g_source_get_time (source);
++
++  if (now < impl->presentation_time)
++    *timeout_ = (impl->presentation_time - now) / 1000L;
++  else
++    *timeout_ = -1;
++
++  return impl->needs_dispatch;
++}
++
++static gboolean
++gdk_display_link_source_check (GSource *source)
++{
++  GdkDisplayLinkSource *impl = (GdkDisplayLinkSource *)source;
++  return impl->needs_dispatch;
++}
++
++static gboolean
++gdk_display_link_source_dispatch (GSource     *source,
++                                  GSourceFunc  callback,
++                                  gpointer     user_data)
++{
++  GdkDisplayLinkSource *impl = (GdkDisplayLinkSource *)source;
++  gboolean ret = G_SOURCE_CONTINUE;
++
++  impl->needs_dispatch = FALSE;
++
++  if (callback != NULL)
++    ret = callback (user_data);
++
++  return ret;
++}
++
++static void
++gdk_display_link_source_finalize (GSource *source)
++{
++  GdkDisplayLinkSource *impl = (GdkDisplayLinkSource *)source;
++
++  CVDisplayLinkStop (impl->display_link);
++  CVDisplayLinkRelease (impl->display_link);
++}
++
++static GSourceFuncs gdk_display_link_source_funcs = {
++  gdk_display_link_source_prepare,
++  gdk_display_link_source_check,
++  gdk_display_link_source_dispatch,
++  gdk_display_link_source_finalize
++};
++
++void
++gdk_display_link_source_pause (GdkDisplayLinkSource *source)
++{
++  CVDisplayLinkStop (source->display_link);
++}
++
++void
++gdk_display_link_source_unpause (GdkDisplayLinkSource *source)
++{
++  CVDisplayLinkStart (source->display_link);
++}
++
++static CVReturn
++gdk_display_link_source_frame_cb (CVDisplayLinkRef   display_link,
++                                  const CVTimeStamp *inNow,
++                                  const CVTimeStamp *inOutputTime,
++                                  CVOptionFlags      flagsIn,
++                                  CVOptionFlags     *flagsOut,
++                                  void              *user_data)
++{
++  GdkDisplayLinkSource *impl = user_data;
++  gint64 presentation_time;
++  gboolean needs_wakeup;
++
++  needs_wakeup = !g_atomic_int_get (&impl->needs_dispatch);
++
++  presentation_time = host_to_frame_clock_time (inOutputTime->hostTime);
++
++  impl->presentation_time = presentation_time;
++  impl->needs_dispatch = TRUE;
++
++  if (needs_wakeup)
++     {
++      NSEvent *event;
++
++      /* Post a message so we'll break out of the message loop.
++       *
++       * We don't use g_main_context_wakeup() here because that
++       * would result in sending a message to the pipe(2) fd in
++       * the select thread which would then send this message as
++       * well. Lots of extra work.
++       */
++      event = [NSEvent otherEventWithType: NSEventTypeApplicationDefined
++                                 location: NSZeroPoint
++                            modifierFlags: 0
++                                timestamp: 0
++                             windowNumber: 0
++                                  context: nil
++                                  subtype: GDK_QUARTZ_EVENT_SUBTYPE_EVENTLOOP
++                                    data1: 0
++                                    data2: 0];
++
++      [NSApp postEvent:event atStart:YES];
++     }
++
++  return kCVReturnSuccess;
++}
++
++/**
++ * gdk_display_link_source_new:
++ *
++ * Creates a new #GSource that will activate the dispatch function upon
++ * notification from a CVDisplayLink that a new frame should be drawn.
++ *
++ * Effort is made to keep the transition from the high-priority
++ * CVDisplayLink thread into this GSource lightweight. However, this is
++ * somewhat non-ideal since the best case would be to do the drawing
++ * from the high-priority thread.
++ *
++ * Returns: (transfer full): A newly created #GSource.
++ */
++GSource *
++gdk_display_link_source_new (void)
++{
++  GdkDisplayLinkSource *impl;
++  GSource *source;
++  CVReturn ret;
++  double period;
++
++  source = g_source_new (&gdk_display_link_source_funcs, sizeof *impl);
++  impl = (GdkDisplayLinkSource *)source;
++
++  /*
++   * Create our link based on currently connected displays.
++   * If there are multiple displays, this will be something that tries
++   * to work for all of them. In the future, we may want to explore multiple
++   * links based on the connected displays.
++   */
++  ret = CVDisplayLinkCreateWithActiveCGDisplays (&impl->display_link);
++  if (ret != kCVReturnSuccess)
++    {
++      g_warning ("Failed to initialize CVDisplayLink!");
++      return source;
++    }
++
++  /*
++   * Determine our nominal period between frames.
++   */
++  period = CVDisplayLinkGetActualOutputVideoRefreshPeriod (impl->display_link);
++  if (period == 0.0)
++    period = 1.0 / 60.0;
++  impl->refresh_interval = period * 1000000L;
++
++  /*
++   * Wire up our callback to be executed within the high-priority thread.
++   */
++  CVDisplayLinkSetOutputCallback (impl->display_link,
++                                  gdk_display_link_source_frame_cb,
++                                  source);
++
++  g_source_set_name (source, "[gdk] quartz frame clock");
++
++  return source;
++}
++
++static gint64
++host_to_frame_clock_time (gint64 host_time)
++{
++  static mach_timebase_info_data_t timebase_info;
++
++  /*
++   * NOTE:
++   *
++   * This code is taken from GLib to match g_get_monotonic_time().
++   */
++  if (G_UNLIKELY (timebase_info.denom == 0))
++    {
++      /* This is a fraction that we must use to scale
++       * mach_absolute_time() by in order to reach nanoseconds.
++       *
++       * We've only ever observed this to be 1/1, but maybe it could be
++       * 1000/1 if mach time is microseconds already, or 1/1000 if
++       * picoseconds.  Try to deal nicely with that.
++       */
++      mach_timebase_info (&timebase_info);
++
++      /* We actually want microseconds... */
++      if (timebase_info.numer % 1000 == 0)
++        timebase_info.numer /= 1000;
++      else
++        timebase_info.denom *= 1000;
++
++      /* We want to make the numer 1 to avoid having to multiply... */
++      if (timebase_info.denom % timebase_info.numer == 0)
++        {
++          timebase_info.denom /= timebase_info.numer;
++          timebase_info.numer = 1;
++        }
++      else
++        {
++          /* We could just multiply by timebase_info.numer below, but why
++           * bother for a case that may never actually exist...
++           *
++           * Plus -- performing the multiplication would risk integer
++           * overflow.  If we ever actually end up in this situation, we
++           * should more carefully evaluate the correct course of action.
++           */
++          mach_timebase_info (&timebase_info); /* Get a fresh copy for a better message */
++          g_error ("Got weird mach timebase info of %d/%d.  Please file a bug against GLib.",
++                   timebase_info.numer, timebase_info.denom);
++        }
++    }
++
++  return host_time / timebase_info.denom;
++}
+diff --git a/gdk/quartz/gdkdisplaylinksource.h b/gdk/quartz/gdkdisplaylinksource.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..7493b0c0d45da07a1cbcbb36eab99848a43b9453
+--- /dev/null
++++ b/gdk/quartz/gdkdisplaylinksource.h
+@@ -0,0 +1,48 @@
++/* gdkdisplaylinksource.h
++ *
++ * Copyright (C) 2015 Christian Hergert <christian@hergert.me>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
++ *
++ * Authors:
++ *   Christian Hergert <christian@hergert.me>
++ */
++
++#ifndef GDK_DISPLAY_LINK_SOURCE_H
++#define GDK_DISPLAY_LINK_SOURCE_H
++
++#include <glib.h>
++
++#include <QuartzCore/QuartzCore.h>
++
++G_BEGIN_DECLS
++
++typedef struct
++{
++  GSource          source;
++
++  CVDisplayLinkRef display_link;
++  gint64           refresh_interval;
++
++  volatile gint64  presentation_time;
++  volatile guint   needs_dispatch;
++} GdkDisplayLinkSource;
++
++GSource *gdk_display_link_source_new     (void);
++void     gdk_display_link_source_pause   (GdkDisplayLinkSource *source);
++void     gdk_display_link_source_unpause (GdkDisplayLinkSource *source);
++
++G_END_DECLS
++
++#endif /* GDK_DISPLAY_LINK_SOURCE_H */
+diff --git a/gdk/quartz/gdkevents-quartz.c b/gdk/quartz/gdkevents-quartz.c
+index 0d492c1619b91351d8392aa561dcbdb63bae011f..1b43add865caa29fed7e2473ab0b91ecbc39a280 100644
+--- a/gdk/quartz/gdkevents-quartz.c
++++ b/gdk/quartz/gdkevents-quartz.c
+@@ -396,7 +396,7 @@ get_window_point_from_screen_point (GdkWindow *window,
+ static gboolean
+ is_mouse_button_press_event (NSEventType type)
+ {
+-  switch (type)
++  switch ((int)type)
+     {
+       case GDK_QUARTZ_LEFT_MOUSE_DOWN:
+       case GDK_QUARTZ_RIGHT_MOUSE_DOWN:
+@@ -1029,7 +1029,7 @@ fill_button_event (GdkWindow *window,
+   state = get_keyboard_modifiers_from_ns_event (nsevent) |
+          _gdk_quartz_events_get_current_mouse_modifiers ();
+ 
+-  switch ([nsevent type])
++  switch ((int)[nsevent type])
+     {
+     case GDK_QUARTZ_LEFT_MOUSE_DOWN:
+     case GDK_QUARTZ_RIGHT_MOUSE_DOWN:
+diff --git a/gdk/quartz/gdkinternal-quartz.h b/gdk/quartz/gdkinternal-quartz.h
+index 7f2566ae3f83fc16416ce1a3d39748c102102f07..646bef3ad7c2cbd46f6cf31eeee026fc772cc176 100644
+--- a/gdk/quartz/gdkinternal-quartz.h
++++ b/gdk/quartz/gdkinternal-quartz.h
+@@ -284,5 +284,10 @@ void     _gdk_quartz_window_change_property   (GdkWindow    *window,
+ void     _gdk_quartz_window_delete_property   (GdkWindow    *window,
+                                                GdkAtom       property);
+ 
++/* Display methods - frame clock */
++void        _gdk_quartz_display_add_frame_callback    (GdkDisplay             *display,
++                                                       GdkWindow              *window);
++void        _gdk_quartz_display_remove_frame_callback (GdkDisplay             *display,
++                                                       GdkWindow              *window);
+ 
+ #endif /* __GDK_INTERNAL_QUARTZ_H__ */
+diff --git a/gdk/quartz/gdkwindow-quartz.c b/gdk/quartz/gdkwindow-quartz.c
+index aa85318e0b5e9dd7b569c6d9323d7725972f1164..366649bbf075342e6dde51ded751d8144e86c5e9 100644
+--- a/gdk/quartz/gdkwindow-quartz.c
++++ b/gdk/quartz/gdkwindow-quartz.c
+@@ -22,6 +22,7 @@
+ #include <gdk/gdk.h>
+ #include <gdk/gdkdeviceprivate.h>
+ #include <gdk/gdkdisplayprivate.h>
++#include <gdk/gdkframeclockprivate.h>
+ 
+ #include "gdkwindowimpl.h"
+ #include "gdkwindow-quartz.h"
+@@ -47,8 +48,6 @@ static gboolean  in_process_all_updates = FALSE;
+ 
+ static GSList *main_window_stack;
+ 
+-void _gdk_quartz_window_flush (GdkWindowImplQuartz *window_impl);
+-
+ typedef struct
+ {
+   gint            x, y;
+@@ -144,12 +143,24 @@ gdk_quartz_window_get_nswindow (GdkWindow *window)
+   return ((GdkWindowImplQuartz *)window->impl)->toplevel;
+ }
+ 
++static CGColorSpaceRef
++get_display_color_space (void)
++{
++  CGColorSpaceRef color_space = CGDisplayCopyColorSpace (CGMainDisplayID ());
++
++  if (!color_space)
++    color_space = CGColorSpaceCreateDeviceRGB ();
++
++  return color_space;
++}
++
+ static CGContextRef
+ gdk_window_impl_quartz_get_context (GdkWindowImplQuartz *window_impl,
+ 				    gboolean             antialias)
+ {
+   CGContextRef cg_context = NULL;
+   CGSize scale;
++  CGColorSpaceRef color_space = get_display_color_space ();
+ 
+   if (GDK_WINDOW_DESTROYED (window_impl->wrapper))
+     return NULL;
+@@ -160,32 +171,35 @@ gdk_window_impl_quartz_get_context (GdkWindowImplQuartz *window_impl,
+    * and for widgets that send fake expose events like the arrow
+    * buttons in spinbuttons or the position marker in rulers.
+    */
++#if MAC_OS_X_VERSION_MIN_REQUIRED < 101400
+   if (window_impl->in_paint_rect_count == 0)
+     {
+       /* The NSView focus-locking API set was deprecated in MacOS 10.14 and
+-       * has a significant cost in MacOS 11 - every lock/unlock seems to 
++       * has a significant cost in MacOS 11 - every lock/unlock seems to
+        * trigger a drawRect: call for the entire window.  To return the
+        * lost performance, do not use the locking API in MacOS 11+
+        */
+-      if(gdk_quartz_osx_version() < GDK_OSX_BIGSUR)
++      if(gdk_quartz_osx_version() < GDK_OSX_MOJAVE)
+         {
+           if (![window_impl->view lockFocusIfCanDraw])
+             return NULL;
+         }
+     }
+-#if MAC_OS_X_VERSION_MAX_ALLOWED < 101000
+-    cg_context = [[NSGraphicsContext currentContext] graphicsPort];
+-#else
++#endif
++#if MAC_OS_X_VERSION_MIN_REQUIRED < 101000
+   if (gdk_quartz_osx_version () < GDK_OSX_YOSEMITE)
+     cg_context = [[NSGraphicsContext currentContext] graphicsPort];
+   else
+-    cg_context = [[NSGraphicsContext currentContext] CGContext];
+ #endif
++    cg_context = [[NSGraphicsContext currentContext] CGContext];
+ 
+   if (!cg_context)
+     return NULL;
+   CGContextSaveGState (cg_context);
+   CGContextSetAllowsAntialiasing (cg_context, antialias);
++  CGContextSetFillColorSpace (cg_context, color_space);
++  CGContextSetStrokeColorSpace (cg_context, color_space);
++  CGColorSpaceRelease (color_space);
+ 
+   /* Undo the default scaling transform, since we apply our own
+    * in gdk_quartz_ref_cairo_surface () */
+@@ -206,19 +220,14 @@ gdk_window_impl_quartz_release_context (GdkWindowImplQuartz *window_impl,
+     }
+ 
+   /* See comment in gdk_quartz_window_get_context(). */
+-  if (window_impl->in_paint_rect_count == 0)
++#if MAC_OS_X_VERSION_MIN_REQUIRED < 101400
++  if (gdk_quartz_osx_version() < GDK_OSX_MOJAVE &&
++      window_impl->in_paint_rect_count == 0)
+     {
+-      _gdk_quartz_window_flush (window_impl);
+-
+-      /* As per gdk_window_impl_quartz_get_context(), the NSView
+-        * focus-locking API set was deprecated in MacOS 10.14 and has
+-        * a significant cost in MacOS 11 - every lock/unlock seems to 
+-        * trigger a drawRect: call for the entire window.  To return the
+-        * lost performance, do not use the locking API in MacOS 11+
+-        */
+-      if(gdk_quartz_osx_version() < GDK_OSX_BIGSUR)
+-        [window_impl->view unlockFocus];
++      [window_impl->toplevel flushWindow];
++      [window_impl->view unlockFocus];
+     }
++#endif
+ }
+ 
+ static void
+@@ -241,52 +250,6 @@ gdk_window_impl_quartz_finalize (GObject *object)
+   G_OBJECT_CLASS (parent_class)->finalize (object);
+ }
+ 
+-/* Help preventing "beam sync penalty" where CG makes all graphics code
+- * block until the next vsync if we try to flush (including call display on
+- * a view) too often. We do this by limiting the manual flushing done
+- * outside of expose calls to less than some frequency when measured over
+- * the last 4 flushes. This is a bit arbitray, but seems to make it possible
+- * for some quick manual flushes (such as gtkruler or gimp’s marching ants)
+- * without hitting the max flush frequency.
+- *
+- * If drawable NULL, no flushing is done, only registering that a flush was
+- * done externally.
+- *
+- * Note: As of MacOS 10.14 NSWindow flushWindow is deprecated because
+- * Quartz has the ability to handle deferred drawing on its own.
+- */
+-void
+-_gdk_quartz_window_flush (GdkWindowImplQuartz *window_impl)
+-{
+-#if MAC_OS_X_VERSION_MIN_REQUIRED < 101400
+-  static struct timeval prev_tv;
+-  static gint intervals[4];
+-  static gint index;
+-  struct timeval tv;
+-  gint ms;
+-
+-  gettimeofday (&tv, NULL);
+-  ms = (tv.tv_sec - prev_tv.tv_sec) * 1000 + (tv.tv_usec - prev_tv.tv_usec) / 1000;
+-  intervals[index++ % 4] = ms;
+-
+-  if (window_impl)
+-    {
+-      ms = intervals[0] + intervals[1] + intervals[2] + intervals[3];
+-
+-      /* ~25Hz on average. */
+-      if (ms > 4*40)
+-        {
+-          if (window_impl)
+-            [window_impl->toplevel flushWindow];
+-
+-          prev_tv = tv;
+-        }
+-    }
+-  else
+-    prev_tv = tv;
+-#endif
+-}
+-
+ static cairo_user_data_key_t gdk_quartz_cairo_key;
+ 
+ typedef struct {
+@@ -301,8 +264,9 @@ gdk_quartz_cairo_surface_destroy (void *data)
+ 
+   surface_data->window_impl->cairo_surface = NULL;
+ 
+-  gdk_quartz_window_release_context (surface_data->window_impl,
+-                                     surface_data->cg_context);
++  if (surface_data->cg_context)
++       gdk_quartz_window_release_context (surface_data->window_impl,
++                                          surface_data->cg_context);
+ 
+   g_free (surface_data);
+ }
+@@ -419,13 +383,14 @@ _gdk_quartz_window_process_updates_recurse (GdkWindow *window,
+           /* In theory, we could skip the flush disabling, since we only
+            * have one NSView.
+            */
+-          if (nswindow && ![nswindow isFlushWindowDisabled]) 
++          if (gdk_quartz_osx_version() < GDK_OSX_MOJAVE &&
++               nswindow && ![nswindow isFlushWindowDisabled])
+             {
+               [nswindow retain];
+               [nswindow disableFlushWindow];
+-              update_nswindows = g_slist_prepend (update_nswindows, nswindow);
+             }
+ #endif
++          update_nswindows = g_slist_prepend (update_nswindows, nswindow);
+         }
+     }
+ 
+@@ -470,10 +435,12 @@ _gdk_quartz_display_after_process_all_updates (GdkDisplay *display)
+ 
+       [[nswindow contentView] displayIfNeeded];
+ 
+-      _gdk_quartz_window_flush (NULL);
+ #if MAC_OS_X_VERSION_MIN_REQUIRED < 101400
+-      [nswindow enableFlushWindow];
+-      [nswindow flushWindow];
++      if(gdk_quartz_osx_version() < GDK_OSX_BIGSUR)
++        {
++          [nswindow enableFlushWindow];
++          [nswindow flushWindow];
++        }
+ #endif
+       [nswindow release];
+ 
+@@ -852,6 +819,29 @@ get_nsscreen_for_point (gint x, gint y)
+   return screen;
+ }
+ 
++static void
++on_frame_clock_before_paint (GdkFrameClock *frame_clock,
++                             GdkWindow     *window)
++{
++}
++
++static void
++on_frame_clock_after_paint (GdkFrameClock *frame_clock,
++                            GdkWindow     *window)
++{
++  GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
++  GdkDisplay *display = gdk_window_get_display (window);
++  GdkFrameTimings *timings;
++
++  timings = gdk_frame_clock_get_current_timings (frame_clock);
++  if (timings != NULL)
++    impl->pending_frame_counter = timings->frame_counter;
++
++  _gdk_quartz_display_add_frame_callback (display, window);
++
++  _gdk_frame_clock_freeze (frame_clock);
++}
++
+ void
+ _gdk_quartz_display_create_window_impl (GdkDisplay    *display,
+                                         GdkWindow     *window,
+@@ -864,6 +854,7 @@ _gdk_quartz_display_create_window_impl (GdkDisplay    *display,
+   GdkWindowImplQuartz *impl;
+   GdkWindowImplQuartz *parent_impl;
+   GdkWindowTypeHint    type_hint = GDK_WINDOW_TYPE_HINT_NORMAL;
++  GdkFrameClock *frame_clock;
+ 
+   GDK_QUARTZ_ALLOC_POOL;
+ 
+@@ -1008,6 +999,16 @@ _gdk_quartz_display_create_window_impl (GdkDisplay    *display,
+     }
+ 
+   GDK_QUARTZ_RELEASE_POOL;
++
++  if (attributes_mask & GDK_WA_TYPE_HINT)
++    gdk_window_set_type_hint (window, attributes->type_hint);
++
++  frame_clock = gdk_window_get_frame_clock (window);
++
++  g_signal_connect (frame_clock, "before-paint",
++                    G_CALLBACK (on_frame_clock_before_paint), window);
++  g_signal_connect (frame_clock, "after-paint",
++                    G_CALLBACK (on_frame_clock_after_paint), window);
+ }
+ 
+ void
+@@ -1063,9 +1064,14 @@ gdk_quartz_window_destroy (GdkWindow *window,
+ {
+   GdkWindowImplQuartz *impl;
+   GdkWindow *parent;
++  GdkDisplay *display;
+ 
+   impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
+ 
++  display = gdk_window_get_display (window);
++
++  _gdk_quartz_display_remove_frame_callback (display, window);
++
+   main_window_stack = g_slist_remove (main_window_stack, window);
+ 
+   g_list_free (impl->sorted_children);
+@@ -3211,6 +3217,7 @@ gdk_quartz_window_release_context (GdkWindowImplQuartz  *window,
+       return;
+     }
+ 
++  g_return_if_fail (cg_context);
+   GDK_WINDOW_IMPL_QUARTZ_GET_CLASS (window)->release_context (window, cg_context);
+ }
+ 
+@@ -3220,21 +3227,21 @@ static CGContextRef
+ gdk_root_window_impl_quartz_get_context (GdkWindowImplQuartz *window,
+                                          gboolean             antialias)
+ {
+-  CGColorSpaceRef colorspace;
++  CGColorSpaceRef color_space = get_display_color_space ();
+   CGContextRef cg_context;
+   GdkWindowImplQuartz *window_impl = GDK_WINDOW_IMPL_QUARTZ (window);
+ 
+   if (GDK_WINDOW_DESTROYED (window_impl->wrapper))
+     return NULL;
+ 
++
+   /* We do not have the notion of a root window on OS X.  We fake this
+    * by creating a 1x1 bitmap and return a context to that.
+    */
+-  colorspace = CGColorSpaceCreateWithName (kCGColorSpaceGenericRGB);
+   cg_context = CGBitmapContextCreate (NULL,
+-                                      1, 1, 8, 4, colorspace,
++                                      1, 1, 8, 4, color_space,
+                                       (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+-  CGColorSpaceRelease (colorspace);
++  CGColorSpaceRelease (color_space);
+ 
+   return cg_context;
+ }
+diff --git a/gdk/quartz/gdkwindow-quartz.h b/gdk/quartz/gdkwindow-quartz.h
+index 1175f072e4b327d85b0adf71d5da2b440ea0009d..c87e90ee1ba019d04119aada2d8784766bc67102 100644
+--- a/gdk/quartz/gdkwindow-quartz.h
++++ b/gdk/quartz/gdkwindow-quartz.h
+@@ -64,6 +64,9 @@ struct _GdkWindowImplQuartz
+   gint shadow_top;
+ 
+   gint shadow_max;
++
++  GList frame_link;
++  gint pending_frame_counter;
+ };
+  
+ struct _GdkWindowImplQuartzClass 
+diff --git a/gdk/quartz/meson.build b/gdk/quartz/meson.build
+index 619c0242e04fb4c94c469003f6f1b73f73a15ef1..2affac99228640981491a70a78a25ac879a23d82 100644
+--- a/gdk/quartz/meson.build
++++ b/gdk/quartz/meson.build
+@@ -8,6 +8,7 @@ gdk_quartz_sources = files(
+   'gdkdevice-core-quartz.c',
+   'gdkdevicemanager-core-quartz.c',
+   'gdkdisplay-quartz.c',
++  'gdkdisplaylinksource.c',
+   'gdkdisplaymanager-quartz.c',
+   'gdkdnd-quartz.c',
+   'gdkevents-quartz.c',
