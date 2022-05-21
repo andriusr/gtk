@@ -1,5 +1,5 @@
 project('gtk+-3.0', 'c',
-        version: '3.24.31',
+        version: '3.24.34',
         default_options: [
           'buildtype=debugoptimized',
           'warning_level=1'
@@ -52,7 +52,7 @@ gtk_version       = meson.project_version()
 gtk_major_version = gtk_version.split('.')[0].to_int()
 gtk_minor_version = gtk_version.split('.')[1].to_int()
 gtk_micro_version = gtk_version.split('.')[2].to_int()
-gtk_interface_age = 27
+gtk_interface_age = 30
 add_project_arguments('-DGTK_VERSION="@0@"'.format(meson.project_version()), language: 'c')
 
 add_project_arguments('-D_GNU_SOURCE', language: 'c')
@@ -670,6 +670,7 @@ endif
 if quartz_enabled
   pc_gdk_extra_libs += ['-Wl,-framework,Cocoa', '-Wl,-framework,Carbon', '-Wl,-framework,CoreGraphics']
   backend_immodules += ['quartz']
+  cdata.set('QUARTZ_RELOCATION', 1)
 endif
 
 extra_demo_ldflags = []
@@ -683,7 +684,7 @@ if win32_enabled
   else
     pc_gdk_extra_libs += ['-Wl,-luuid']
   endif
-  pc_gdk_extra_libs += ['-lwinmm', '-ldwmapi', '-lsetupapi', '-lcfgmgr32', '-lhid']
+  pc_gdk_extra_libs += ['-lwinmm', '-ldwmapi', '-lsetupapi', '-lcfgmgr32', '-lhid', '-lwinspool', '-lcomctl32', '-lcomdlg32']
   backend_immodules += ['ime']
 
   # Check whether libepoxy is built with EGL support on Windows
@@ -1008,13 +1009,25 @@ subdir('docs/reference')
 
 install_data('m4macros/gtk-3.0.m4', install_dir: join_paths(get_option('datadir'), 'aclocal'))
 
-# Keep this in sync with post-install.py expected arguments
-meson.add_install_script('build-aux/meson/post-install.py',
-                         gtk_api_version,
-                         gtk_binary_version,
-                         join_paths(gtk_prefix, get_option('bindir')),
-                         gtk_libdir,
-                         gtk_datadir)
+if not meson.is_cross_build()
+  if meson.version().version_compare('>=0.57.0')
+    gnome.post_install(
+      glib_compile_schemas: true,
+      gio_querymodules: gio_module_dirs,
+      gtk_update_icon_cache: get_option('demos'),
+    )
+  else
+    # Keep this in sync with post-install.py expected arguments
+    meson.add_install_script('build-aux/meson/post-install.py',
+                             gtk_api_version,
+                             gtk_binary_version,
+                             join_paths(gtk_prefix, get_option('bindir')),
+                             gtk_libdir,
+                             gtk_datadir)
+  endif
+else
+  message('Not executing post-install steps automatically when cross compiling')
+endif
 
 if host_machine.system() != 'windows'
   # Install Valgrind suppression files (except on Windows,
