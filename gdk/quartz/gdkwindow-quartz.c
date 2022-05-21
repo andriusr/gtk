@@ -22,7 +22,6 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkdeviceprivate.h>
 #include <gdk/gdkdisplayprivate.h>
-#include <gdk/gdkframeclockprivate.h>
 
 #include "gdkwindowimpl.h"
 #include "gdkwindow-quartz.h"
@@ -151,10 +150,6 @@ gdk_window_impl_quartz_get_context (GdkWindowImplQuartz *window_impl,
 {
   CGContextRef cg_context = NULL;
   CGSize scale;
-  CGColorSpaceRef color_space = CGDisplayCopyColorSpace (CGMainDisplayID ());
-
-  if (!color_space)
-    color_space = CGColorSpaceCreateDeviceRGB ();
 
   if (GDK_WINDOW_DESTROYED (window_impl->wrapper))
     return NULL;
@@ -165,34 +160,32 @@ gdk_window_impl_quartz_get_context (GdkWindowImplQuartz *window_impl,
    * and for widgets that send fake expose events like the arrow
    * buttons in spinbuttons or the position marker in rulers.
    */
-#if MAC_OS_X_VERSION_MIN_REQUIRED < 101400
   if (window_impl->in_paint_rect_count == 0)
     {
       /* The NSView focus-locking API set was deprecated in MacOS 10.14 and
-       * has a significant cost in MacOS 11 - every lock/unlock seems to
+       * has a significant cost in MacOS 11 - every lock/unlock seems to 
        * trigger a drawRect: call for the entire window.  To return the
        * lost performance, do not use the locking API in MacOS 11+
        */
-      if(gdk_quartz_osx_version() < GDK_OSX_MOJAVE)
+      if(gdk_quartz_osx_version() < GDK_OSX_BIGSUR)
         {
           if (![window_impl->view lockFocusIfCanDraw])
             return NULL;
         }
     }
-#endif
-#if MAC_OS_X_VERSION_MIN_REQUIRED < 101000
+#if MAC_OS_X_VERSION_MAX_ALLOWED < 101000
+    cg_context = [[NSGraphicsContext currentContext] graphicsPort];
+#else
   if (gdk_quartz_osx_version () < GDK_OSX_YOSEMITE)
     cg_context = [[NSGraphicsContext currentContext] graphicsPort];
   else
-#endif
     cg_context = [[NSGraphicsContext currentContext] CGContext];
+#endif
 
   if (!cg_context)
     return NULL;
   CGContextSaveGState (cg_context);
   CGContextSetAllowsAntialiasing (cg_context, antialias);
-  CGContextSetFillColorSpace (cg_context, color_space);
-  CGContextSetStrokeColorSpace (cg_context, color_space);
 
   /* Undo the default scaling transform, since we apply our own
    * in gdk_quartz_ref_cairo_surface () */
@@ -223,10 +216,8 @@ gdk_window_impl_quartz_release_context (GdkWindowImplQuartz *window_impl,
         * trigger a drawRect: call for the entire window.  To return the
         * lost performance, do not use the locking API in MacOS 11+
         */
-#if MAC_OS_X_VERSION_MIN_REQUIRED < 101400
-      if(gdk_quartz_osx_version() < GDK_OSX_MOJAVE)
+      if(gdk_quartz_osx_version() < GDK_OSX_BIGSUR)
         [window_impl->view unlockFocus];
-#endif
     }
 }
 
@@ -321,12 +312,11 @@ gdk_quartz_create_cairo_surface (GdkWindowImplQuartz *impl,
 				 int                  width,
 				 int                  height)
 {
-  CGContextRef cg_context = NULL;
+  CGContextRef cg_context;
   GdkQuartzCairoSurfaceData *surface_data;
   cairo_surface_t *surface;
 
-  if (impl->use_cg_context)
-    cg_context = gdk_quartz_window_get_context (impl, TRUE);
+  cg_context = gdk_quartz_window_get_context (impl, TRUE);
 
   surface_data = g_new (GdkQuartzCairoSurfaceData, 1);
   surface_data->window_impl = impl;
@@ -336,7 +326,7 @@ gdk_quartz_create_cairo_surface (GdkWindowImplQuartz *impl,
     surface = cairo_quartz_surface_create_for_cg_context (cg_context,
                                                           width, height);
   else
-    surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
+    surface = cairo_quartz_surface_create(CAIRO_FORMAT_ARGB32, width, height);
 
   cairo_surface_set_user_data (surface, &gdk_quartz_cairo_key,
                                surface_data,
@@ -374,22 +364,12 @@ static void
 gdk_window_impl_quartz_init (GdkWindowImplQuartz *impl)
 {
   impl->type_hint = GDK_WINDOW_TYPE_HINT_NORMAL;
-  impl->use_cg_context = FALSE;
 }
 
 static gboolean
 gdk_window_impl_quartz_begin_paint (GdkWindow *window)
 {
-  GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
-  impl->use_cg_context = FALSE;
-  return TRUE;
-}
-
-static void
-gdk_window_impl_quartz_end_paint (GdkWindow *window)
-{
-  GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
-  impl->use_cg_context = TRUE;
+  return FALSE;
 }
 
 static void
@@ -872,29 +852,6 @@ get_nsscreen_for_point (gint x, gint y)
   return screen;
 }
 
-static void
-on_frame_clock_before_paint (GdkFrameClock *frame_clock,
-                             GdkWindow     *window)
-{
-}
-
-static void
-on_frame_clock_after_paint (GdkFrameClock *frame_clock,
-                            GdkWindow     *window)
-{
-  GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
-  GdkDisplay *display = gdk_window_get_display (window);
-  GdkFrameTimings *timings;
-
-  timings = gdk_frame_clock_get_current_timings (frame_clock);
-  if (timings != NULL)
-    impl->pending_frame_counter = timings->frame_counter;
-
-  _gdk_quartz_display_add_frame_callback (display, window);
-
-  _gdk_frame_clock_freeze (frame_clock);
-}
-
 void
 _gdk_quartz_display_create_window_impl (GdkDisplay    *display,
                                         GdkWindow     *window,
@@ -907,7 +864,6 @@ _gdk_quartz_display_create_window_impl (GdkDisplay    *display,
   GdkWindowImplQuartz *impl;
   GdkWindowImplQuartz *parent_impl;
   GdkWindowTypeHint    type_hint = GDK_WINDOW_TYPE_HINT_NORMAL;
-  GdkFrameClock *frame_clock;
 
   GDK_QUARTZ_ALLOC_POOL;
 
@@ -1052,16 +1008,6 @@ _gdk_quartz_display_create_window_impl (GdkDisplay    *display,
     }
 
   GDK_QUARTZ_RELEASE_POOL;
-
-  if (attributes_mask & GDK_WA_TYPE_HINT)
-    gdk_window_set_type_hint (window, attributes->type_hint);
-
-  frame_clock = gdk_window_get_frame_clock (window);
-
-  g_signal_connect (frame_clock, "before-paint",
-                    G_CALLBACK (on_frame_clock_before_paint), window);
-  g_signal_connect (frame_clock, "after-paint",
-                    G_CALLBACK (on_frame_clock_after_paint), window);
 }
 
 void
@@ -1117,13 +1063,8 @@ gdk_quartz_window_destroy (GdkWindow *window,
 {
   GdkWindowImplQuartz *impl;
   GdkWindow *parent;
-  GdkDisplay *display;
 
   impl = GDK_WINDOW_IMPL_QUARTZ (window->impl);
-
-  display = gdk_window_get_display (window);
-
-  _gdk_quartz_display_remove_frame_callback (display, window);
 
   main_window_stack = g_slist_remove (main_window_stack, window);
 
@@ -3160,7 +3101,6 @@ gdk_window_impl_quartz_class_init (GdkWindowImplQuartzClass *klass)
   impl_class->get_shape = gdk_quartz_window_get_shape;
   impl_class->get_input_shape = gdk_quartz_window_get_input_shape;
   impl_class->begin_paint = gdk_window_impl_quartz_begin_paint;
-  impl_class->end_paint = gdk_window_impl_quartz_end_paint;
   impl_class->get_scale_factor = gdk_quartz_window_get_scale_factor;
 
   impl_class->focus = gdk_quartz_window_focus;
