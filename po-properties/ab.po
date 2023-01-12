@@ -1,67 +1,60 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-01 01:35+0000\n"
-"PO-Revision-Date: 2022-10-02 12:37+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: \n"
-"Language: ka\n"
+"POT-Creation-Date: 2023-01-02 15:33+0000\n"
+"Last-Translator: Нанба Наала <naala-nanba@rambler.ru>\n"
+"Language-Team: Abkhazian <daniel.abzakh@gmail.com>\n"
+"Language: ab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-DamnedLies-Scope: partial\n"
 
 #: gdk/gdkapplaunchcontext.c:127 gdk/gdkcursor.c:139 gdk/gdkdevicemanager.c:185
 #: gdk/gdkglcontext.c:317 gdk/gdkseat.c:202 gdk/gdkseat.c:203
 msgid "Display"
-msgstr "ჩვენება"
+msgstr "Адисплеи"
 
 #: gdk/gdkcursor.c:131
 msgid "Cursor type"
-msgstr "კურსორის ტიპი"
+msgstr ""
 
 #: gdk/gdkcursor.c:132
 msgid "Standard cursor type"
-msgstr "კურსორის სტანდარტული ტიპი"
+msgstr ""
 
 #: gdk/gdkcursor.c:140
 msgid "Display of this cursor"
-msgstr "კურსორის ჩვენება"
+msgstr ""
 
 #: gdk/gdkdevice.c:123
 msgid "Device Display"
-msgstr "მოწყობილობის ეკრანი"
+msgstr ""
 
 #: gdk/gdkdevice.c:124
 msgid "Display which the device belongs to"
-msgstr "ეკრანი, რომელსაც მოწყობილობა ეკუთვნის"
+msgstr ""
 
 #: gdk/gdkdevice.c:138
 msgid "Device manager"
-msgstr "მოწყობილობის მმართველი"
+msgstr ""
 
 #: gdk/gdkdevice.c:139
 msgid "Device manager which the device belongs to"
-msgstr "მოწყობილობის მმართველი, რომელსაც მოწყობილობა ეკუთვნის"
+msgstr ""
 
 #: gdk/gdkdevice.c:152 gdk/gdkdevice.c:153
 msgid "Device name"
-msgstr "მოწყობილობის სახელი"
+msgstr "Аиҿартәыра ахьӡ"
 
 #: gdk/gdkdevice.c:166
 msgid "Device type"
-msgstr "მოწყობილობის ტიპი"
+msgstr ""
 
 #: gdk/gdkdevice.c:167
 msgid "Device role in the device manager"
-msgstr "მოწყობილობის როლი მმართველში"
+msgstr ""
 
 #: gdk/gdkdevice.c:183
 msgid "Associated device"
@@ -73,19 +66,19 @@ msgstr ""
 
 #: gdk/gdkdevice.c:197
 msgid "Input source"
-msgstr "შეყვანის წყარო"
+msgstr ""
 
 #: gdk/gdkdevice.c:198
 msgid "Source type for the device"
-msgstr "ამ მოწყობილობის შეყვანის ტიპი"
+msgstr ""
 
 #: gdk/gdkdevice.c:213 gdk/gdkdevice.c:214
 msgid "Input mode for the device"
-msgstr "ამ მოწყობილობის შეყვანის რეჟიმი"
+msgstr ""
 
 #: gdk/gdkdevice.c:229
 msgid "Whether the device has a cursor"
-msgstr "აქვს თუ არა მოწყობილობას კურსორი"
+msgstr ""
 
 #: gdk/gdkdevice.c:230
 msgid "Whether there is a visible cursor following device motion"
@@ -97,15 +90,15 @@ msgstr ""
 
 #: gdk/gdkdevice.c:259 gdk/gdkdevice.c:260
 msgid "Vendor ID"
-msgstr "Vendor ID"
+msgstr ""
 
 #: gdk/gdkdevice.c:274 gdk/gdkdevice.c:275
 msgid "Product ID"
-msgstr "პროდუქტის ID"
+msgstr ""
 
 #: gdk/gdkdevice.c:289 gdk/gdkdevice.c:290
 msgid "Seat"
-msgstr "სავარძელი"
+msgstr ""
 
 #: gdk/gdkdevice.c:306 gdk/gdkdevice.c:307
 msgid "Number of concurrent touches"
@@ -113,11 +106,11 @@ msgstr ""
 
 #: gdk/gdkdevice.c:321 gdk/gdkdevice.c:322
 msgid "Axes"
-msgstr "ღერძები"
+msgstr ""
 
 #: gdk/gdkdevice.c:328
 msgid "Tool"
-msgstr "ხელსაწყო"
+msgstr ""
 
 #: gdk/gdkdevice.c:329
 msgid "The tool that is currently used with this device"
@@ -141,7 +134,7 @@ msgstr ""
 
 #: gdk/gdkglcontext.c:333 gtk/gtkwidget.c:1351
 msgid "Window"
-msgstr "ფანჯარა"
+msgstr ""
 
 #: gdk/gdkglcontext.c:334
 msgid "The GDK window bound to the GL context"
@@ -173,7 +166,7 @@ msgstr ""
 
 #: gdk/gdkwindow.c:354 gdk/gdkwindow.c:355
 msgid "Cursor"
-msgstr "კურსორი"
+msgstr ""
 
 #: gdk/x11/gdkdevicemanager-xi2.c:132
 msgid "Opcode"
@@ -185,7 +178,7 @@ msgstr ""
 
 #: gdk/x11/gdkdevicemanager-xi2.c:139
 msgid "Major"
-msgstr "ძირითადი"
+msgstr ""
 
 #: gdk/x11/gdkdevicemanager-xi2.c:140
 msgid "Major version number"
@@ -193,7 +186,7 @@ msgstr ""
 
 #: gdk/x11/gdkdevicemanager-xi2.c:146
 msgid "Minor"
-msgstr "მცირე"
+msgstr ""
 
 #: gdk/x11/gdkdevicemanager-xi2.c:147
 msgid "Minor version number"
@@ -201,7 +194,7 @@ msgstr ""
 
 #: gdk/x11/gdkdevice-xi2.c:142
 msgid "Device ID"
-msgstr "მოწყობილობის ID"
+msgstr ""
 
 #: gdk/x11/gdkdevice-xi2.c:143
 msgid "Device identifier"
@@ -219,7 +212,7 @@ msgstr ""
 #: gtk/deprecated/gtkthemingengine.c:247 gtk/gtkcssnode.c:638
 #: gtk/gtkprinter.c:121 gtk/gtkstack.c:516 gtk/gtktextmark.c:136
 msgid "Name"
-msgstr "სახელი"
+msgstr "Ахьӡ"
 
 #: gtk/deprecated/gtkaction.c:244
 msgid "A unique name for the action."
@@ -229,7 +222,7 @@ msgstr ""
 #: gtk/gtkframe.c:232 gtk/gtklabel.c:806 gtk/gtkmenuitem.c:791
 #: gtk/gtktoolbutton.c:243 gtk/gtktoolitemgroup.c:1639
 msgid "Label"
-msgstr "ჭდე"
+msgstr "Ахҵара"
 
 #: gtk/deprecated/gtkaction.c:265
 msgid "The label used for menu items and buttons that activate this action."
@@ -245,7 +238,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkaction.c:300
 msgid "Tooltip"
-msgstr "მინიშნება"
+msgstr ""
 
 #: gtk/deprecated/gtkaction.c:301
 msgid "A tooltip for this action."
@@ -261,7 +254,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkaction.c:342 gtk/deprecated/gtkstatusicon.c:279
 msgid "GIcon"
-msgstr "GIcon"
+msgstr ""
 
 #: gtk/deprecated/gtkaction.c:343 gtk/deprecated/gtkstatusicon.c:280
 #: gtk/gtkcellrendererpixbuf.c:282 gtk/gtkimage.c:360
@@ -330,7 +323,7 @@ msgstr ""
 #: gtk/deprecated/gtkaction.c:466 gtk/deprecated/gtkactiongroup.c:215
 #: gtk/gtkcellrenderer.c:308 gtk/gtkwidget.c:1159
 msgid "Sensitive"
-msgstr "მგრძნობიარე"
+msgstr ""
 
 #: gtk/deprecated/gtkaction.c:467
 msgid "Whether the action is enabled."
@@ -340,7 +333,7 @@ msgstr ""
 #: gtk/deprecated/gtkstatusicon.c:314 gtk/gtkcssnode.c:649
 #: gtk/gtknativedialog.c:242 gtk/gtktreeviewcolumn.c:246 gtk/gtkwidget.c:1152
 msgid "Visible"
-msgstr "ხილული"
+msgstr ""
 
 #: gtk/deprecated/gtkaction.c:482
 msgid "Whether the action is visible."
@@ -581,7 +574,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkfontsel.c:247 gtk/gtkfontchooser.c:90
 msgid "Preview text"
-msgstr "ტექსტის გადახედვა"
+msgstr ""
 
 #: gtk/deprecated/gtkfontsel.c:248 gtk/gtkfontchooser.c:91
 msgid "The text to display in order to demonstrate the selected font"
@@ -737,7 +730,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkradioaction.c:120
 msgid "The value"
-msgstr "მნიშვნელობა"
+msgstr ""
 
 #: gtk/deprecated/gtkradioaction.c:121
 msgid ""
@@ -748,7 +741,7 @@ msgstr ""
 #: gtk/deprecated/gtkradioaction.c:139 gtk/gtkradiobutton.c:184
 #: gtk/gtkradiomenuitem.c:424 gtk/gtkradiotoolbutton.c:83
 msgid "Group"
-msgstr "GROUP"
+msgstr "Агәыԥ"
 
 #: gtk/deprecated/gtkradioaction.c:140
 msgid "The radio action whose group this action belongs to."
@@ -774,7 +767,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:234 gtk/gtkimage.c:256
 msgid "Pixbuf"
-msgstr "Pixbuf"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:235 gtk/gtkimage.c:257
 msgid "A GdkPixbuf to display"
@@ -783,7 +776,7 @@ msgstr ""
 #: gtk/deprecated/gtkstatusicon.c:242 gtk/gtkimage.c:270
 #: gtk/gtkrecentmanager.c:289
 msgid "Filename"
-msgstr "ფაილის სახელი"
+msgstr "Афаил ахьӡ"
 
 #: gtk/deprecated/gtkstatusicon.c:243 gtk/gtkimage.c:271
 msgid "Filename to load and display"
@@ -800,7 +793,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:287 gtk/gtkimage.c:380
 msgid "Storage type"
-msgstr "საცავის ტიპი"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:288 gtk/gtkimage.c:381
 msgid "The representation being used for image data"
@@ -809,7 +802,7 @@ msgstr ""
 #: gtk/deprecated/gtkstatusicon.c:296 gtk/gtkcellrendererpixbuf.c:210
 #: gtk/gtkcellrendererspinner.c:159 gtk/gtkrecentmanager.c:304
 msgid "Size"
-msgstr "ზომა"
+msgstr "Ашәага"
 
 #: gtk/deprecated/gtkstatusicon.c:297
 msgid "The size of the icon"
@@ -818,7 +811,7 @@ msgstr ""
 #: gtk/deprecated/gtkstatusicon.c:306 gtk/gtkinvisible.c:98
 #: gtk/gtkmountoperation.c:183 gtk/gtkstylecontext.c:229 gtk/gtkwindow.c:898
 msgid "Screen"
-msgstr "ეკრანი"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:307
 msgid "The screen where this status icon will be displayed"
@@ -830,7 +823,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:330 gtk/gtkplug.c:198
 msgid "Embedded"
-msgstr "ჩაკერებული"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:331
 msgid "Whether the status icon is embedded"
@@ -839,7 +832,7 @@ msgstr ""
 #: gtk/deprecated/gtkstatusicon.c:346 gtk/deprecated/gtktrayicon-x11.c:127
 #: gtk/gtkgesturepan.c:238 gtk/gtkorientable.c:61
 msgid "Orientation"
-msgstr "ორიენტაცია"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:347 gtk/deprecated/gtktrayicon-x11.c:128
 msgid "The orientation of the tray"
@@ -855,7 +848,7 @@ msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:401 gtk/gtkwidget.c:1313
 msgid "Tooltip Text"
-msgstr "მინიშნების ტექსტი"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:402 gtk/gtkwidget.c:1314 gtk/gtkwidget.c:1338
 msgid "The contents of the tooltip for this widget"
@@ -875,7 +868,7 @@ msgstr ""
 #: gtk/gtkshortcutssection.c:376 gtk/gtkshortcutsshortcut.c:576
 #: gtk/gtkstack.c:523 gtk/gtktreeviewcolumn.c:316
 msgid "Title"
-msgstr "სათაური"
+msgstr ""
 
 #: gtk/deprecated/gtkstatusicon.c:444
 msgid "The title of this tray icon"
@@ -891,7 +884,7 @@ msgstr ""
 
 #: gtk/deprecated/gtktable.c:185
 msgid "Rows"
-msgstr "სტრიქონები"
+msgstr ""
 
 #: gtk/deprecated/gtktable.c:186
 msgid "The number of rows in the table"
@@ -899,7 +892,7 @@ msgstr ""
 
 #: gtk/deprecated/gtktable.c:194
 msgid "Columns"
-msgstr "სვეტები"
+msgstr ""
 
 #: gtk/deprecated/gtktable.c:195
 msgid "The number of columns in the table"
@@ -1015,7 +1008,7 @@ msgstr ""
 #: gtk/gtkmodelbutton.c:1212 gtk/gtkspinner.c:221 gtk/gtkswitch.c:879
 #: gtk/gtktogglebutton.c:188 gtk/gtktoggletoolbutton.c:130
 msgid "Active"
-msgstr "აქტიური"
+msgstr "Иаҿакуп"
 
 #: gtk/deprecated/gtktoggleaction.c:136
 msgid "Whether the toggle action should be active"
@@ -1024,7 +1017,7 @@ msgstr ""
 #: gtk/deprecated/gtktrayicon-x11.c:136 gtk/gtkcellrenderertext.c:334
 #: gtk/gtktexttag.c:277
 msgid "Foreground color"
-msgstr "წინა პლანის ფერი"
+msgstr ""
 
 #: gtk/deprecated/gtktrayicon-x11.c:137
 msgid "Foreground color for symbolic icons"
@@ -1056,7 +1049,7 @@ msgstr ""
 
 #: gtk/deprecated/gtktrayicon-x11.c:168 gtk/gtkbox.c:350
 msgid "Padding"
-msgstr "შევსება"
+msgstr ""
 
 #: gtk/deprecated/gtktrayicon-x11.c:169
 msgid "Padding that should be put around icons in the tray"
@@ -1064,7 +1057,7 @@ msgstr ""
 
 #: gtk/deprecated/gtktrayicon-x11.c:178 gtk/gtkstackswitcher.c:686
 msgid "Icon Size"
-msgstr "ხატულების ზომა"
+msgstr ""
 
 #: gtk/deprecated/gtktrayicon-x11.c:179
 msgid "The pixel size that icons should be forced to, or zero"
@@ -1122,7 +1115,7 @@ msgstr ""
 
 #: gtk/gtkaboutdialog.c:414
 msgid "License"
-msgstr "ლიცენზია"
+msgstr "Алицензия"
 
 #: gtk/gtkaboutdialog.c:415
 msgid "The license of the program"
@@ -1130,7 +1123,7 @@ msgstr ""
 
 #: gtk/gtkaboutdialog.c:442
 msgid "License Type"
-msgstr "ლიცენზიის ტიპი"
+msgstr ""
 
 #: gtk/gtkaboutdialog.c:443
 msgid "The license type of the program"
@@ -1154,7 +1147,7 @@ msgstr ""
 
 #: gtk/gtkaboutdialog.c:488
 msgid "Authors"
-msgstr "ავტორები"
+msgstr "Аԥҵаҩы"
 
 #: gtk/gtkaboutdialog.c:489
 msgid "List of authors of the program"
@@ -1162,7 +1155,7 @@ msgstr ""
 
 #: gtk/gtkaboutdialog.c:504
 msgid "Documenters"
-msgstr ""
+msgstr "Адокументқәа раԥҵаҩцәа"
 
 #: gtk/gtkaboutdialog.c:505
 msgid "List of people documenting the program"
@@ -1170,7 +1163,7 @@ msgstr ""
 
 #: gtk/gtkaboutdialog.c:520
 msgid "Artists"
-msgstr "შემსრულებლები"
+msgstr "Анагӡаҩцәа"
 
 #: gtk/gtkaboutdialog.c:521
 msgid "List of people who have contributed artwork to the program"
@@ -1187,7 +1180,7 @@ msgstr ""
 
 #: gtk/gtkaboutdialog.c:551
 msgid "Logo"
-msgstr "ლოგო"
+msgstr ""
 
 #: gtk/gtkaboutdialog.c:552
 msgid ""
@@ -1230,7 +1223,7 @@ msgstr ""
 #: gtk/gtkaccessible.c:156 gtk/gtkeventcontroller.c:168
 #: gtk/gtktreeviewcolumn.c:337
 msgid "Widget"
-msgstr "ვიჯეტი"
+msgstr ""
 
 #: gtk/gtkaccessible.c:157
 msgid "The widget referenced by this accessible."
@@ -1238,7 +1231,7 @@ msgstr ""
 
 #: gtk/gtkactionable.c:71
 msgid "Action name"
-msgstr "ქმედების სახელი"
+msgstr ""
 
 #: gtk/gtkactionable.c:72
 msgid "The name of the associated action, like 'app.quit'"
@@ -1266,7 +1259,7 @@ msgstr ""
 #: gtk/gtknotebook.c:841 gtk/gtkpaned.c:368 gtk/gtkpopover.c:1767
 #: gtk/gtkpopovermenu.c:384 gtk/gtkstack.c:537 gtk/gtktoolitemgroup.c:1716
 msgid "Position"
-msgstr "თანამდებობა"
+msgstr "Аҭагылазаашьа"
 
 #: gtk/gtkactionbar.c:346 gtk/gtkbox.c:366 gtk/gtkheaderbar.c:2021
 #: gtk/gtknotebook.c:842 gtk/gtkpopovermenu.c:385 gtk/gtkstack.c:538
@@ -1276,7 +1269,7 @@ msgstr ""
 #: gtk/gtkadjustment.c:142 gtk/gtkcellrendererprogress.c:138
 #: gtk/gtkscalebutton.c:198 gtk/gtkspinbutton.c:436
 msgid "Value"
-msgstr "მნიშვნელობა"
+msgstr "Аҵакы"
 
 #: gtk/gtkadjustment.c:143
 msgid "The value of the adjustment"
@@ -1316,7 +1309,7 @@ msgstr ""
 
 #: gtk/gtkadjustment.c:223
 msgid "Page Size"
-msgstr "Page Size"
+msgstr ""
 
 #: gtk/gtkadjustment.c:224
 msgid "The page size of the adjustment"
@@ -1350,7 +1343,7 @@ msgstr ""
 
 #: gtk/gtkappchooser.c:73
 msgid "Content type"
-msgstr "შემცველობის ტიპი"
+msgstr ""
 
 #: gtk/gtkappchooser.c:74
 msgid "The content type used by the open with object"
@@ -1430,7 +1423,7 @@ msgstr ""
 
 #: gtk/gtkapplication.c:870
 msgid "Application menu"
-msgstr "პროგრამის მენიუ"
+msgstr ""
 
 #: gtk/gtkapplication.c:871
 msgid "The GMenuModel for the application menu"
@@ -1438,7 +1431,7 @@ msgstr ""
 
 #: gtk/gtkapplication.c:877
 msgid "Menubar"
-msgstr "მენიუს ზოლი"
+msgstr ""
 
 #: gtk/gtkapplication.c:878
 msgid "The GMenuModel for the menubar"
@@ -1446,7 +1439,7 @@ msgstr ""
 
 #: gtk/gtkapplication.c:884
 msgid "Active window"
-msgstr "აქტიური ფანჯარა"
+msgstr ""
 
 #: gtk/gtkapplication.c:885
 msgid "The window which most recently had focus"
@@ -1470,7 +1463,7 @@ msgstr ""
 
 #: gtk/gtkaspectframe.c:118 gtk/gtkwidget.c:1396
 msgid "Vertical Alignment"
-msgstr ""
+msgstr "Гәҵәыла  аиҟаратәра"
 
 #: gtk/gtkaspectframe.c:119
 msgid "Y alignment of the child"
@@ -1478,7 +1471,7 @@ msgstr ""
 
 #: gtk/gtkaspectframe.c:125
 msgid "Ratio"
-msgstr "პროპორციები"
+msgstr ""
 
 #: gtk/gtkaspectframe.c:126
 msgid "Aspect ratio if obey_child is FALSE"
@@ -1598,7 +1591,7 @@ msgstr ""
 
 #: gtk/gtkbbox.c:275
 msgid "Layout style"
-msgstr ""
+msgstr "Ашрифт _астиль"
 
 #: gtk/gtkbbox.c:276
 msgid ""
@@ -1608,7 +1601,7 @@ msgstr ""
 
 #: gtk/gtkbbox.c:284
 msgid "Secondary"
-msgstr "მეორადი"
+msgstr ""
 
 #: gtk/gtkbbox.c:285
 msgid ""
@@ -1627,7 +1620,7 @@ msgstr ""
 #: gtk/gtkbox.c:278 gtk/gtkcellareabox.c:310 gtk/gtkexpander.c:342
 #: gtk/gtkheaderbar.c:2048 gtk/gtkiconview.c:524 gtk/gtktreeviewcolumn.c:276
 msgid "Spacing"
-msgstr "დაშორება"
+msgstr ""
 
 #: gtk/gtkbox.c:279 gtk/gtkheaderbar.c:2049
 msgid "The amount of space between children"
@@ -1650,7 +1643,7 @@ msgstr ""
 #: gtk/gtktoolitemgroup.c:1695 gtk/gtktoolpalette.c:1027
 #: gtk/gtktreeviewcolumn.c:323
 msgid "Expand"
-msgstr "გაფართოება"
+msgstr "Аиҵыхра"
 
 #: gtk/gtkbox.c:319
 msgid "Whether the child should receive extra space when the parent grows"
@@ -1658,7 +1651,7 @@ msgstr ""
 
 #: gtk/gtkbox.c:335 gtk/gtktoolitemgroup.c:1702
 msgid "Fill"
-msgstr "შევსება"
+msgstr ""
 
 #: gtk/gtkbox.c:336
 msgid ""
@@ -1793,7 +1786,7 @@ msgstr ""
 
 #: gtk/gtkcalendar.c:398
 msgid "Year"
-msgstr "წელი"
+msgstr "Ашықәс"
 
 #: gtk/gtkcalendar.c:399
 msgid "The selected year"
@@ -1801,7 +1794,7 @@ msgstr ""
 
 #: gtk/gtkcalendar.c:412
 msgid "Month"
-msgstr "თვე"
+msgstr "Амз"
 
 #: gtk/gtkcalendar.c:413
 msgid "The selected month (as a number between 0 and 11)"
@@ -1809,7 +1802,7 @@ msgstr ""
 
 #: gtk/gtkcalendar.c:427
 msgid "Day"
-msgstr "დღე"
+msgstr "Амш"
 
 #: gtk/gtkcalendar.c:428
 msgid ""
@@ -1867,7 +1860,7 @@ msgstr ""
 
 #: gtk/gtkcalendar.c:535
 msgid "Show Details"
-msgstr "დეტალების ჩვენება"
+msgstr "Аԥкаарақәа рырбара"
 
 #: gtk/gtkcalendar.c:536
 msgid "If TRUE, details are shown"
@@ -1907,7 +1900,7 @@ msgstr ""
 
 #: gtk/gtkcellareabox.c:346
 msgid "Align"
-msgstr "სწორება"
+msgstr ""
 
 #: gtk/gtkcellareabox.c:347
 msgid "Whether cell should align with adjacent rows"
@@ -1957,7 +1950,7 @@ msgstr ""
 
 #: gtk/gtkcellareacontext.c:115
 msgid "Area"
-msgstr "ფართობი"
+msgstr "Аҵакыра"
 
 #: gtk/gtkcellareacontext.c:116
 msgid "The Cell Area this context was created for"
@@ -1990,7 +1983,7 @@ msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:141
 msgid "Accelerator key"
-msgstr "აქსელერატორის გასაღები"
+msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:142
 msgid "The keyval of the accelerator"
@@ -1998,7 +1991,7 @@ msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:158
 msgid "Accelerator modifiers"
-msgstr "აქსელერატორის მოდიფიკატორები"
+msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:159
 msgid "The modifier mask of the accelerator"
@@ -2006,7 +1999,7 @@ msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:176
 msgid "Accelerator keycode"
-msgstr "ამაჩქარებლის keycode"
+msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:177
 msgid "The hardware keycode of the accelerator"
@@ -2014,7 +2007,7 @@ msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:196
 msgid "Accelerator Mode"
-msgstr "აქსელერაციის რეჟიმი"
+msgstr ""
 
 #: gtk/gtkcellrendereraccel.c:197
 msgid "The type of accelerators"
@@ -2022,7 +2015,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderer.c:292
 msgid "mode"
-msgstr "რეჟიმი"
+msgstr ""
 
 #: gtk/gtkcellrenderer.c:293
 msgid "Editable mode of the CellRenderer"
@@ -2030,7 +2023,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderer.c:301
 msgid "visible"
-msgstr "ხილული"
+msgstr ""
 
 #: gtk/gtkcellrenderer.c:302
 msgid "Display the cell"
@@ -2074,7 +2067,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderer.c:356
 msgid "width"
-msgstr "სიგანე"
+msgstr ""
 
 #: gtk/gtkcellrenderer.c:357
 msgid "The fixed width"
@@ -2082,7 +2075,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderer.c:366
 msgid "height"
-msgstr "სიმაღლე"
+msgstr "Аҳаракыра"
 
 #: gtk/gtkcellrenderer.c:367
 msgid "The fixed height"
@@ -2130,7 +2123,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderer.c:432
 msgid "Editing"
-msgstr "ჩასწორება"
+msgstr ""
 
 #: gtk/gtkcellrenderer.c:433
 msgid "Whether the cell renderer is currently in editing mode"
@@ -2146,7 +2139,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderercombo.c:128
 msgid "Model"
-msgstr "მოდელი"
+msgstr ""
 
 #: gtk/gtkcellrenderercombo.c:129
 msgid "The model containing the possible values for the combo box"
@@ -2210,7 +2203,7 @@ msgstr ""
 
 #: gtk/gtkcellrendererpixbuf.c:227
 msgid "Detail"
-msgstr "დეტალები"
+msgstr ""
 
 #: gtk/gtkcellrendererpixbuf.c:228
 msgid "Render detail to pass to the theme engine"
@@ -2227,7 +2220,7 @@ msgstr ""
 #: gtk/gtkcellrendererpixbuf.c:281 gtk/gtkimage.c:359 gtk/gtkmodelbutton.c:1166
 #: gtk/gtkshortcutsshortcut.c:551 gtk/gtkwindow.c:842
 msgid "Icon"
-msgstr "ხატულა"
+msgstr ""
 
 #: gtk/gtkcellrendererprogress.c:139
 msgid "Value of the progress bar"
@@ -2237,7 +2230,7 @@ msgstr ""
 #: gtk/gtkentrybuffer.c:350 gtk/gtkentry.c:953 gtk/gtkmessagedialog.c:214
 #: gtk/gtkmodelbutton.c:1180 gtk/gtkprogressbar.c:287 gtk/gtktextbuffer.c:219
 msgid "Text"
-msgstr "ტექსტი"
+msgstr "Атекст"
 
 #: gtk/gtkcellrendererprogress.c:157
 msgid "Text on the progress bar"
@@ -2245,7 +2238,7 @@ msgstr ""
 
 #: gtk/gtkcellrendererprogress.c:180 gtk/gtkcellrendererspinner.c:144
 msgid "Pulse"
-msgstr "პულსი"
+msgstr ""
 
 #: gtk/gtkcellrendererprogress.c:181
 msgid ""
@@ -2283,7 +2276,7 @@ msgstr ""
 #: gtk/gtkcellrendererspin.c:113 gtk/gtkrange.c:434 gtk/gtkscalebutton.c:217
 #: gtk/gtkspinbutton.c:379
 msgid "Adjustment"
-msgstr "დარეგულირება"
+msgstr ""
 
 #: gtk/gtkcellrendererspin.c:114 gtk/gtkspinbutton.c:380
 msgid "The adjustment that holds the value of the spin button"
@@ -2299,7 +2292,7 @@ msgstr ""
 
 #: gtk/gtkcellrendererspin.c:143 gtk/gtkscale.c:767 gtk/gtkspinbutton.c:395
 msgid "Digits"
-msgstr "ციფრები"
+msgstr ""
 
 #: gtk/gtkcellrendererspin.c:144 gtk/gtkspinbutton.c:396
 msgid "The number of decimal places to display"
@@ -2323,7 +2316,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:262
 msgid "Markup"
-msgstr "მარქაფი"
+msgstr "Адырганҵа"
 
 #: gtk/gtkcellrenderertext.c:263
 msgid "Marked up text to render"
@@ -2331,7 +2324,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:269 gtk/gtkentry.c:1493 gtk/gtklabel.c:813
 msgid "Attributes"
-msgstr "ატრიბუტები"
+msgstr "Аҟашьарбагақәа"
 
 #: gtk/gtkcellrenderertext.c:270
 msgid "A list of style attributes to apply to the text of the renderer"
@@ -2355,7 +2348,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:298 gtk/gtkcellview.c:233 gtk/gtktexttag.c:231
 msgid "Background color"
-msgstr "ფონის ფერი"
+msgstr "Ақәыԥшылара аԥштәы:"
 
 #: gtk/gtkcellrenderertext.c:299 gtk/gtkcellview.c:234 gtk/gtktexttag.c:232
 msgid "Background color as a GdkColor"
@@ -2392,7 +2385,7 @@ msgstr ""
 #: gtk/gtkcellrenderertext.c:357 gtk/gtkentry.c:861 gtk/gtktexttag.c:309
 #: gtk/gtktextview.c:826
 msgid "Editable"
-msgstr "ჩასწორებადი"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:358 gtk/gtktexttag.c:310 gtk/gtktextview.c:827
 msgid "Whether the text can be modified by the user"
@@ -2401,7 +2394,7 @@ msgstr ""
 #: gtk/gtkcellrenderertext.c:364 gtk/gtkcellrenderertext.c:371
 #: gtk/gtkfontchooser.c:64 gtk/gtktexttag.c:325 gtk/gtktexttag.c:333
 msgid "Font"
-msgstr "შრიფტი"
+msgstr "Ашрифт"
 
 #: gtk/gtkcellrenderertext.c:365 gtk/gtkfontchooser.c:65 gtk/gtktexttag.c:326
 msgid "Font description as a string, e.g. \"Sans Italic 12\""
@@ -2413,7 +2406,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:378 gtk/gtktexttag.c:341
 msgid "Font family"
-msgstr "ფონტების ოჯახი"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:379 gtk/gtktexttag.c:342
 msgid "Name of the font family, e.g. Sans, Helvetica, Times, Monospace"
@@ -2422,7 +2415,7 @@ msgstr ""
 #: gtk/gtkcellrenderertext.c:385 gtk/gtkcellrenderertext.c:386
 #: gtk/gtktexttag.c:349
 msgid "Font style"
-msgstr "ფონტის სტილი"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:393 gtk/gtkcellrenderertext.c:394
 #: gtk/gtktexttag.c:358
@@ -2432,7 +2425,7 @@ msgstr ""
 #: gtk/gtkcellrenderertext.c:401 gtk/gtkcellrenderertext.c:402
 #: gtk/gtktexttag.c:367
 msgid "Font weight"
-msgstr "ფონტის წონა"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:409 gtk/gtkcellrenderertext.c:410
 #: gtk/gtktexttag.c:378
@@ -2442,7 +2435,7 @@ msgstr ""
 #: gtk/gtkcellrenderertext.c:417 gtk/gtkcellrenderertext.c:418
 #: gtk/gtktexttag.c:387
 msgid "Font size"
-msgstr "ფონტის ზომა"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:425 gtk/gtktexttag.c:407
 msgid "Font points"
@@ -2471,7 +2464,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:450 gtk/gtktexttag.c:516
 msgid "Strikethrough"
-msgstr "ხაზგადასმული"
+msgstr "Аҵәаӷәара"
 
 #: gtk/gtkcellrenderertext.c:451 gtk/gtktexttag.c:517
 msgid "Whether to strike through the text"
@@ -2479,7 +2472,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:457 gtk/gtktexttag.c:524
 msgid "Underline"
-msgstr "ხაზგასმული"
+msgstr "Изыҵшьоу"
 
 #: gtk/gtkcellrenderertext.c:458 gtk/gtktexttag.c:525
 msgid "Style of underline for this text"
@@ -2487,7 +2480,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:465 gtk/gtkfontchooser.c:154 gtk/gtktexttag.c:436
 msgid "Language"
-msgstr "ენა"
+msgstr "Абызшәа"
 
 #: gtk/gtkcellrenderertext.c:466
 msgid ""
@@ -2525,7 +2518,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:542 gtk/gtktexttag.c:569
 msgid "Wrap mode"
-msgstr "გადატანის რეჟიმი"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:543
 msgid ""
@@ -2543,7 +2536,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertext.c:580 gtk/gtktreeviewcolumn.c:344
 msgid "Alignment"
-msgstr "სწორება"
+msgstr ""
 
 #: gtk/gtkcellrenderertext.c:581
 msgid "How to align the lines"
@@ -2703,7 +2696,7 @@ msgstr ""
 
 #: gtk/gtkcellrenderertoggle.c:154 gtk/gtklistbox.c:3920
 msgid "Activatable"
-msgstr "გააქტიურებადი"
+msgstr "Активациа ззухо"
 
 #: gtk/gtkcellrenderertoggle.c:155
 msgid "The toggle button can be activated"
@@ -2842,7 +2835,7 @@ msgstr ""
 
 #: gtk/gtkcolorchooser.c:67
 msgid "Color"
-msgstr "ფერი"
+msgstr ""
 
 #: gtk/gtkcolorchooser.c:68
 msgid "Current color, as a GdkRGBA"
@@ -3042,7 +3035,7 @@ msgstr ""
 
 #: gtk/gtkcontainer.c:549
 msgid "Child"
-msgstr "ბავშვი"
+msgstr ""
 
 #: gtk/gtkcontainer.c:550
 msgid "Can be used to add a new child to the container"
@@ -3050,7 +3043,7 @@ msgstr ""
 
 #: gtk/gtkcssnode.c:628
 msgid "Style Classes"
-msgstr "სტილის კლასები"
+msgstr ""
 
 #: gtk/gtkcssnode.c:628
 msgid "List of classes"
@@ -3062,11 +3055,11 @@ msgstr "ID"
 
 #: gtk/gtkcssnode.c:633
 msgid "Unique ID"
-msgstr "უნიკალური ID"
+msgstr ""
 
 #: gtk/gtkcssnode.c:643 gtk/gtkswitch.c:894
 msgid "State"
-msgstr "მდგომარეობა"
+msgstr "Аҵакыра"
 
 #: gtk/gtkcssnode.c:643
 msgid "State flags"
@@ -3211,7 +3204,7 @@ msgstr ""
 
 #: gtk/gtkentry.c:876
 msgid "Visibility"
-msgstr "ხილვადობა"
+msgstr ""
 
 #: gtk/gtkentry.c:877
 msgid ""
@@ -3482,7 +3475,7 @@ msgstr ""
 
 #: gtk/gtkentry.c:1436
 msgid "Completion"
-msgstr "დასრულება"
+msgstr "Автоматикла ахарҭәаара"
 
 #: gtk/gtkentry.c:1437
 msgid "The auxiliary completion object"
@@ -3490,7 +3483,7 @@ msgstr ""
 
 #: gtk/gtkentry.c:1457 gtk/gtkimcontext.c:337 gtk/gtktextview.c:1012
 msgid "Purpose"
-msgstr "მიზანი"
+msgstr ""
 
 #: gtk/gtkentry.c:1458 gtk/gtkimcontext.c:338 gtk/gtktextview.c:1013
 msgid "Purpose of the text field"
@@ -3518,7 +3511,7 @@ msgstr ""
 
 #: gtk/gtkentry.c:1522 gtk/gtktexttag.c:579 gtk/gtktextview.c:942
 msgid "Tabs"
-msgstr "დაფები"
+msgstr "Агәылаҵақәа"
 
 #: gtk/gtkentry.c:1523
 msgid "A list of tabstop locations to apply to the text of the entry"
@@ -3578,7 +3571,7 @@ msgstr ""
 
 #: gtk/gtkentrycompletion.c:370 gtk/gtkiconview.c:445
 msgid "Text column"
-msgstr "ტექსტის სვეტი"
+msgstr ""
 
 #: gtk/gtkentrycompletion.c:371
 msgid "The column of the model containing the strings."
@@ -3658,7 +3651,7 @@ msgstr ""
 
 #: gtk/gtkeventcontrollerscroll.c:373 gtk/gtkeventcontrollerscroll.c:374
 msgid "Flags"
-msgstr "ალმები"
+msgstr "Абираҟқәа"
 
 #: gtk/gtkexpander.c:301
 msgid "Expanded"
@@ -3725,7 +3718,7 @@ msgstr ""
 
 #: gtk/gtkfilechooserbutton.c:428
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr ""
 
 #: gtk/gtkfilechooserbutton.c:429
 msgid "The file chooser dialog to use."
@@ -3741,7 +3734,7 @@ msgstr ""
 
 #: gtk/gtkfilechooser.c:375
 msgid "Action"
-msgstr "მოქმედება"
+msgstr ""
 
 #: gtk/gtkfilechooser.c:376
 msgid "The type of operation that the file selector is performing"
@@ -3849,18 +3842,18 @@ msgstr ""
 msgid "The label on the cancel button"
 msgstr ""
 
-#: gtk/gtkfilechooserwidget.c:8669 gtk/gtkfilechooserwidget.c:8670
+#: gtk/gtkfilechooserwidget.c:8672 gtk/gtkfilechooserwidget.c:8673
 msgid "Search mode"
 msgstr ""
 
-#: gtk/gtkfilechooserwidget.c:8676 gtk/gtkfilechooserwidget.c:8677
+#: gtk/gtkfilechooserwidget.c:8679 gtk/gtkfilechooserwidget.c:8680
 #: gtk/gtkheaderbar.c:2034 gtk/gtkshortcutsshortcut.c:592
 msgid "Subtitle"
-msgstr "სუბტიტრები"
+msgstr ""
 
 #: gtk/gtkfixed.c:156 gtk/gtklayout.c:648 gtk/gtktreeviewcolumn.c:260
 msgid "X position"
-msgstr "X მდებარეობა"
+msgstr ""
 
 #: gtk/gtkfixed.c:157 gtk/gtklayout.c:649
 msgid "X position of child widget"
@@ -3868,7 +3861,7 @@ msgstr ""
 
 #: gtk/gtkfixed.c:164 gtk/gtklayout.c:658
 msgid "Y position"
-msgstr "Y მდებარეობა"
+msgstr ""
 
 #: gtk/gtkfixed.c:165 gtk/gtklayout.c:659
 msgid "Y position of child widget"
@@ -3877,11 +3870,11 @@ msgstr ""
 #: gtk/gtkflowbox.c:3822 gtk/gtkiconview.c:408 gtk/gtklistbox.c:485
 #: gtk/gtktreeselection.c:131
 msgid "Selection mode"
-msgstr "მონიშვნის რეჟიმი"
+msgstr "Алхра арежим"
 
 #: gtk/gtkflowbox.c:3823 gtk/gtkiconview.c:409 gtk/gtklistbox.c:486
 msgid "The selection mode"
-msgstr "მონიშვნის რეჟიმი"
+msgstr ""
 
 #: gtk/gtkflowbox.c:3836 gtk/gtkiconview.c:665 gtk/gtklistbox.c:493
 #: gtk/gtktreeview.c:1221
@@ -3963,7 +3956,7 @@ msgstr ""
 
 #: gtk/gtkfontbutton.c:572
 msgid "Show size"
-msgstr "ზომის ჩვენება"
+msgstr ""
 
 #: gtk/gtkfontbutton.c:573
 msgid "Whether selected font size is shown in the label"
@@ -4043,7 +4036,7 @@ msgstr ""
 
 #: gtk/gtkgesture.c:876
 msgid "Number of points"
-msgstr "წერტილების რაოდენობა"
+msgstr ""
 
 #: gtk/gtkgesture.c:877
 msgid "Number of points needed to trigger the gesture"
@@ -4087,7 +4080,7 @@ msgstr ""
 
 #: gtk/gtkglarea.c:784
 msgid "Context"
-msgstr "კონტექსტი"
+msgstr ""
 
 #: gtk/gtkglarea.c:785
 msgid "The GL context"
@@ -4163,7 +4156,7 @@ msgstr ""
 
 #: gtk/gtkgrid.c:1809 gtk/gtklayout.c:674 gtk/gtktreeviewcolumn.c:268
 msgid "Width"
-msgstr "სიგანე"
+msgstr ""
 
 #: gtk/gtkgrid.c:1810
 msgid "The number of columns that a child spans"
@@ -4171,7 +4164,7 @@ msgstr ""
 
 #: gtk/gtkgrid.c:1816 gtk/gtklayout.c:683 gtk/gtkshortcutsgroup.c:362
 msgid "Height"
-msgstr "სიმაღლე"
+msgstr "Аҳаракыра"
 
 #: gtk/gtkgrid.c:1817
 msgid "The number of rows that a child spans"
@@ -4255,7 +4248,7 @@ msgstr ""
 
 #: gtk/gtkiconview.c:490
 msgid "Number of columns"
-msgstr "სვეტების რაოდენობა"
+msgstr ""
 
 #: gtk/gtkiconview.c:491
 msgid "Number of columns to display"
@@ -4275,7 +4268,7 @@ msgstr ""
 
 #: gtk/gtkiconview.c:540
 msgid "Row Spacing"
-msgstr "რიგების დაშორება"
+msgstr ""
 
 #: gtk/gtkiconview.c:541
 msgid "Space which is inserted between grid rows"
@@ -4283,7 +4276,7 @@ msgstr ""
 
 #: gtk/gtkiconview.c:556
 msgid "Column Spacing"
-msgstr "სვეტების დაშორება"
+msgstr ""
 
 #: gtk/gtkiconview.c:557
 msgid "Space which is inserted between grid columns"
@@ -4291,7 +4284,7 @@ msgstr ""
 
 #: gtk/gtkiconview.c:572
 msgid "Margin"
-msgstr "ზღვარი"
+msgstr ""
 
 #: gtk/gtkiconview.c:573
 msgid "Space which is inserted at the edges of the icon view"
@@ -4308,11 +4301,11 @@ msgstr ""
 
 #: gtk/gtkiconview.c:605 gtk/gtktreeview.c:1060 gtk/gtktreeviewcolumn.c:351
 msgid "Reorderable"
-msgstr "გადალაგებადი"
+msgstr ""
 
 #: gtk/gtkiconview.c:606 gtk/gtktreeview.c:1061
 msgid "View is reorderable"
-msgstr "ხედი გადალაგებადია"
+msgstr ""
 
 #: gtk/gtkiconview.c:613 gtk/gtktreeview.c:1205
 msgid "Tooltip Column"
@@ -4348,7 +4341,7 @@ msgstr ""
 
 #: gtk/gtkimage.c:263
 msgid "Surface"
-msgstr "ზედაპირი"
+msgstr ""
 
 #: gtk/gtkimage.c:264
 msgid "A cairo_surface_t to display"
@@ -4365,7 +4358,7 @@ msgstr ""
 #: gtk/gtkimage.c:303 gtk/gtkscalebutton.c:208 gtk/gtktoolbar.c:564
 #: gtk/gtktoolpalette.c:965
 msgid "Icon size"
-msgstr "ხატულების ზომა"
+msgstr ""
 
 #: gtk/gtkimage.c:304
 msgid "Symbolic size to use for stock icon, icon set or named icon"
@@ -4381,7 +4374,7 @@ msgstr ""
 
 #: gtk/gtkimage.c:328
 msgid "Animation"
-msgstr "ანიმაცია"
+msgstr "Анимациа"
 
 #: gtk/gtkimage.c:329
 msgid "GdkPixbufAnimation to display"
@@ -4389,7 +4382,7 @@ msgstr ""
 
 #: gtk/gtkimage.c:373
 msgid "Resource"
-msgstr "რესურსი"
+msgstr "Ахыҵхырҭа"
 
 #: gtk/gtkimage.c:374
 msgid "The resource path being displayed"
@@ -4413,7 +4406,7 @@ msgstr ""
 
 #: gtk/gtkinfobar.c:465 gtk/gtksearchbar.c:425
 msgid "Show Close Button"
-msgstr "დახურვის ღილაკის ჩვენება"
+msgstr ""
 
 #: gtk/gtkinfobar.c:466
 msgid "Whether to include a standard close button"
@@ -4460,7 +4453,7 @@ msgstr ""
 
 #: gtk/gtklabel.c:878
 msgid "Pattern"
-msgstr "ნიმუში"
+msgstr ""
 
 #: gtk/gtklabel.c:879
 msgid ""
@@ -4520,7 +4513,7 @@ msgstr ""
 
 #: gtk/gtklabel.c:1020
 msgid "Angle"
-msgstr "კუთხე"
+msgstr "Акәакь"
 
 #: gtk/gtklabel.c:1021
 msgid "Angle at which the label is rotated"
@@ -4540,7 +4533,7 @@ msgstr ""
 
 #: gtk/gtklabel.c:1074
 msgid "Number of lines"
-msgstr "ხაზების რაოდენობა"
+msgstr ""
 
 #: gtk/gtklabel.c:1075
 msgid "The desired number of lines, when ellipsizing a wrapping label"
@@ -4632,7 +4625,7 @@ msgstr ""
 
 #: gtk/gtklockbutton.c:265
 msgid "Permission"
-msgstr "წვდომა"
+msgstr ""
 
 #: gtk/gtklockbutton.c:266
 msgid "The GPermission object controlling this button"
@@ -4693,7 +4686,7 @@ msgstr ""
 
 #: gtk/gtkmagnifier.c:309 gtk/gtkmagnifier.c:310
 msgid "resize"
-msgstr "resize"
+msgstr ""
 
 #: gtk/gtkmenubar.c:219
 msgid "Pack direction"
@@ -4725,7 +4718,7 @@ msgstr ""
 
 #: gtk/gtkmenubutton.c:486
 msgid "Popup"
-msgstr "მხტუნარა"
+msgstr ""
 
 #: gtk/gtkmenubutton.c:487
 msgid "The dropdown menu."
@@ -4750,7 +4743,7 @@ msgstr ""
 #: gtk/gtkmenubutton.c:534 gtk/gtkshortcutsshortcut.c:646
 #: gtk/gtkstylecontext.c:243
 msgid "Direction"
-msgstr "მიმართულება"
+msgstr "Ахырхарҭа"
 
 #: gtk/gtkmenubutton.c:535
 msgid "The direction the arrow should point."
@@ -4812,7 +4805,7 @@ msgstr ""
 
 #: gtk/gtkmenu.c:735
 msgid "Monitor"
-msgstr "მონიტორინგი"
+msgstr ""
 
 #: gtk/gtkmenu.c:736
 msgid "The monitor the menu will be popped up on"
@@ -4951,7 +4944,7 @@ msgstr ""
 
 #: gtk/gtkmenuitem.c:761 gtk/gtkpopovermenu.c:376
 msgid "Submenu"
-msgstr "ქვემენიუ"
+msgstr ""
 
 #: gtk/gtkmenuitem.c:762
 msgid "The submenu attached to the menu item, or NULL if it has none"
@@ -4987,7 +4980,7 @@ msgstr ""
 
 #: gtk/gtkmenutoolbutton.c:267
 msgid "Menu"
-msgstr "მენიუ"
+msgstr "Амениу"
 
 #: gtk/gtkmenutoolbutton.c:268
 msgid "The dropdown menu"
@@ -5039,7 +5032,7 @@ msgstr ""
 
 #: gtk/gtkmessagedialog.c:277
 msgid "Image"
-msgstr ""
+msgstr "Асахьа"
 
 #: gtk/gtkmessagedialog.c:278
 msgid "The image"
@@ -5055,7 +5048,7 @@ msgstr ""
 
 #: gtk/gtkmodelbutton.c:1150
 msgid "Role"
-msgstr "როლი"
+msgstr "Ароль"
 
 #: gtk/gtkmodelbutton.c:1151
 msgid "The role of this button"
@@ -5087,7 +5080,7 @@ msgstr ""
 
 #: gtk/gtkmodelbutton.c:1257
 msgid "Centered"
-msgstr "შუაზე გასწორებული"
+msgstr "Агәҭала"
 
 #: gtk/gtkmodelbutton.c:1258
 msgid "Whether to center the contents"
@@ -5095,7 +5088,7 @@ msgstr ""
 
 #: gtk/gtkmodelbutton.c:1273
 msgid "Iconic"
-msgstr "ხატულები"
+msgstr ""
 
 #: gtk/gtkmodelbutton.c:1274
 msgid "Whether to prefer the icon over text"
@@ -5103,7 +5096,7 @@ msgstr ""
 
 #: gtk/gtkmountoperation.c:167 gtk/gtkstylecontext.c:259
 msgid "Parent"
-msgstr "მშობლიური"
+msgstr ""
 
 #: gtk/gtkmountoperation.c:168
 msgid "The parent window"
@@ -5153,7 +5146,7 @@ msgstr ""
 
 #: gtk/gtknotebook.c:766
 msgid "Page"
-msgstr "გვერდი"
+msgstr "Адаҟьа"
 
 #: gtk/gtknotebook.c:767
 msgid "The index of the current page"
@@ -5203,7 +5196,7 @@ msgstr ""
 
 #: gtk/gtknotebook.c:817
 msgid "Group Name"
-msgstr "ჯგუფის სახელი"
+msgstr ""
 
 #: gtk/gtknotebook.c:818
 msgid "Group name for tab drag and drop"
@@ -5337,7 +5330,7 @@ msgstr ""
 
 #: gtk/gtkoverlay.c:788
 msgid "Pass Through"
-msgstr "გატარება"
+msgstr ""
 
 #: gtk/gtkoverlay.c:788
 msgid "Pass through input, does not affect main child"
@@ -5345,7 +5338,7 @@ msgstr ""
 
 #: gtk/gtkoverlay.c:802
 msgid "Index"
-msgstr "ინდექსი"
+msgstr "Ахы"
 
 #: gtk/gtkoverlay.c:803
 msgid "The index of the overlay in the parent, -1 for the main child"
@@ -5414,7 +5407,7 @@ msgstr ""
 
 #: gtk/gtkpaned.c:459
 msgid "Resize"
-msgstr "ზომის შეცვლა"
+msgstr ""
 
 #: gtk/gtkpaned.c:460
 msgid "If TRUE, the child expands and shrinks along with the paned widget"
@@ -5422,7 +5415,7 @@ msgstr ""
 
 #: gtk/gtkpaned.c:475
 msgid "Shrink"
-msgstr "დაპატარავება"
+msgstr ""
 
 #: gtk/gtkpaned.c:476
 msgid "If TRUE, the child can be made smaller than its requisition"
@@ -5515,7 +5508,7 @@ msgstr ""
 
 #: gtk/gtkplacesview.c:2352
 msgid "Loading"
-msgstr "ჩატვირთვა"
+msgstr "Аҭагалара"
 
 #: gtk/gtkplacesview.c:2353
 msgid "Whether the view is loading locations"
@@ -5595,7 +5588,7 @@ msgstr ""
 
 #: gtk/gtkpopover.c:1739
 msgid "Relative to"
-msgstr "ორიენტრირი"
+msgstr ""
 
 #: gtk/gtkpopover.c:1740
 msgid "Widget the bubble window points to"
@@ -5651,7 +5644,7 @@ msgstr ""
 
 #: gtk/gtkprinter.c:128
 msgid "Backend"
-msgstr "უკანბოლო"
+msgstr ""
 
 #: gtk/gtkprinter.c:129
 msgid "Backend for the printer"
@@ -5691,7 +5684,7 @@ msgstr ""
 
 #: gtk/gtkprinter.c:163
 msgid "Location"
-msgstr "მდებარეობა"
+msgstr "Аҭыӡҭыԥ"
 
 #: gtk/gtkprinter.c:164
 msgid "The location of the printer"
@@ -5747,7 +5740,7 @@ msgstr ""
 
 #: gtk/gtkprintjob.c:142
 msgid "Printer"
-msgstr "პრინტერი"
+msgstr ""
 
 #: gtk/gtkprintjob.c:143
 msgid "Printer to print the job to"
@@ -5755,7 +5748,7 @@ msgstr ""
 
 #: gtk/gtkprintjob.c:151
 msgid "Settings"
-msgstr "მორგება"
+msgstr "Архиарақәа"
 
 #: gtk/gtkprintjob.c:152
 msgid "Printer settings"
@@ -5763,7 +5756,7 @@ msgstr ""
 
 #: gtk/gtkprintjob.c:160 gtk/gtkprintjob.c:161 gtk/gtkprintunixdialog.c:413
 msgid "Page Setup"
-msgstr "გვერდის მორგება"
+msgstr "Адаҟьа ахышәарақәа"
 
 #: gtk/gtkprintjob.c:169 gtk/gtkprintoperation.c:1237
 msgid "Track Print Status"
@@ -5785,7 +5778,7 @@ msgstr ""
 
 #: gtk/gtkprintoperation.c:1128 gtk/gtkprintunixdialog.c:431
 msgid "Print Settings"
-msgstr "ბეჭდვის მორგება"
+msgstr ""
 
 #: gtk/gtkprintoperation.c:1129 gtk/gtkprintunixdialog.c:432
 msgid "The GtkPrintSettings used for initializing the dialog"
@@ -5793,7 +5786,7 @@ msgstr ""
 
 #: gtk/gtkprintoperation.c:1147
 msgid "Job Name"
-msgstr "დავალების სახელი"
+msgstr ""
 
 #: gtk/gtkprintoperation.c:1148
 msgid "A string used for identifying the print job."
@@ -5809,7 +5802,7 @@ msgstr ""
 
 #: gtk/gtkprintoperation.c:1194 gtk/gtkprintunixdialog.c:421
 msgid "Current Page"
-msgstr "მიმდინარე გვერდი"
+msgstr ""
 
 #: gtk/gtkprintoperation.c:1195 gtk/gtkprintunixdialog.c:422
 msgid "The current page in the document"
@@ -5833,7 +5826,7 @@ msgstr ""
 
 #: gtk/gtkprintoperation.c:1255
 msgid "Unit"
-msgstr "განყოფილება"
+msgstr ""
 
 #: gtk/gtkprintoperation.c:1256
 msgid "The unit in which distances can be measured in the context"
@@ -5861,7 +5854,7 @@ msgstr ""
 
 #: gtk/gtkprintoperation.c:1335
 msgid "Status"
-msgstr "მდგომარეობა"
+msgstr "Аҭагылазаашьа"
 
 #: gtk/gtkprintoperation.c:1336
 msgid "The status of the print operation"
@@ -5893,7 +5886,7 @@ msgstr ""
 
 #: gtk/gtkprintoperation.c:1408 gtk/gtkprintunixdialog.c:464
 msgid "Has Selection"
-msgstr ""
+msgstr "Активла алкаара"
 
 #: gtk/gtkprintoperation.c:1409
 msgid "TRUE if a selection exists."
@@ -5945,7 +5938,7 @@ msgstr ""
 
 #: gtk/gtkprogressbar.c:271
 msgid "Fraction"
-msgstr "ნაწილი"
+msgstr ""
 
 #: gtk/gtkprogressbar.c:272
 msgid "The fraction of total work that has been completed"
@@ -5965,7 +5958,7 @@ msgstr ""
 
 #: gtk/gtkprogressbar.c:309
 msgid "Show text"
-msgstr "ტექსტის ჩვენება"
+msgstr ""
 
 #: gtk/gtkprogressbar.c:310
 msgid "Whether the progress is shown as text."
@@ -6083,7 +6076,7 @@ msgstr ""
 
 #: gtk/gtkrange.c:504
 msgid "Fill Level"
-msgstr "შევსების დონე"
+msgstr ""
 
 #: gtk/gtkrange.c:505
 msgid "The fill level."
@@ -6183,7 +6176,7 @@ msgstr ""
 
 #: gtk/gtkrecentchooser.c:161
 msgid "Show Tooltips"
-msgstr "მინიშნებების ჩვენება"
+msgstr ""
 
 #: gtk/gtkrecentchooser.c:162
 msgid "Whether there should be a tooltip on the item"
@@ -6191,7 +6184,7 @@ msgstr ""
 
 #: gtk/gtkrecentchooser.c:175
 msgid "Show Icons"
-msgstr "ხატულების ჩვენება"
+msgstr ""
 
 #: gtk/gtkrecentchooser.c:176
 msgid "Whether there should be an icon near the item"
@@ -6219,7 +6212,7 @@ msgstr ""
 
 #: gtk/gtkrecentchooser.c:236
 msgid "Limit"
-msgstr "ზღვარი"
+msgstr ""
 
 #: gtk/gtkrecentchooser.c:237
 msgid "The maximum number of items to be displayed"
@@ -6292,7 +6285,7 @@ msgstr ""
 
 #: gtk/gtkscalebutton.c:246
 msgid "Icons"
-msgstr "ხატულები"
+msgstr ""
 
 #: gtk/gtkscalebutton.c:247
 msgid "List of icon names"
@@ -6546,7 +6539,7 @@ msgstr ""
 
 #: gtk/gtkseparatortoolitem.c:143
 msgid "Draw"
-msgstr "ხატვა"
+msgstr ""
 
 #: gtk/gtkseparatortoolitem.c:144
 msgid "Whether the separator is drawn, or just blank"
@@ -6656,7 +6649,7 @@ msgstr ""
 
 #: gtk/gtksettings.c:530
 msgid "Drag threshold"
-msgstr "გადათრევის ზღვარი"
+msgstr ""
 
 #: gtk/gtksettings.c:531
 msgid "Number of pixels the cursor can move before dragging"
@@ -6664,7 +6657,7 @@ msgstr ""
 
 #: gtk/gtksettings.c:544
 msgid "Font Name"
-msgstr ""
+msgstr "Ашрифт ахьӡ"
 
 #: gtk/gtksettings.c:545
 msgid "The default font family and size to use"
@@ -6807,7 +6800,7 @@ msgstr ""
 
 #: gtk/gtksettings.c:785
 msgid "Color scheme"
-msgstr "ფერების სქემა"
+msgstr ""
 
 #: gtk/gtksettings.c:786
 msgid "A palette of named colors for use in themes"
@@ -6815,7 +6808,7 @@ msgstr ""
 
 #: gtk/gtksettings.c:795
 msgid "Enable Animations"
-msgstr "ანიმაციების ჩართვა"
+msgstr "Анимациа аҿакра"
 
 #: gtk/gtksettings.c:796
 msgid "Whether to enable toolkit-wide animations."
@@ -7251,15 +7244,15 @@ msgstr ""
 
 #: gtk/gtkshortcutlabel.c:479 gtk/gtkshortcutsshortcut.c:537
 msgid "Accelerator"
-msgstr "ამაჩქარებელი"
+msgstr ""
 
 #: gtk/gtkshortcutlabel.c:491
 msgid "Disabled text"
-msgstr "გათიშული ტექსტი"
+msgstr ""
 
 #: gtk/gtkshortcutsgroup.c:322
 msgid "View"
-msgstr "ნახვა"
+msgstr "Аԥшра"
 
 #: gtk/gtkshortcutsgroup.c:335 gtk/gtkshortcutsgroup.c:336
 #: gtk/gtkshortcutsshortcut.c:618 gtk/gtkshortcutsshortcut.c:619
@@ -7329,7 +7322,7 @@ msgstr ""
 
 #: gtk/gtkshortcutsshortcut.c:678
 msgid "Action Name"
-msgstr "ქმედების სახელი"
+msgstr ""
 
 #: gtk/gtkshortcutsshortcut.c:679
 msgid "The name of the action"
@@ -7337,7 +7330,7 @@ msgstr ""
 
 #: gtk/gtksizegroup.c:229 gtk/gtktreeselection.c:130
 msgid "Mode"
-msgstr "რეჟიმი"
+msgstr ""
 
 #: gtk/gtksizegroup.c:230
 msgid ""
@@ -7374,7 +7367,7 @@ msgstr ""
 
 #: gtk/gtkspinbutton.c:411
 msgid "Numeric"
-msgstr "რიცხვობრივი"
+msgstr ""
 
 #: gtk/gtkspinbutton.c:412
 msgid "Whether non-numeric characters should be ignored"
@@ -7382,7 +7375,7 @@ msgstr ""
 
 #: gtk/gtkspinbutton.c:419
 msgid "Wrap"
-msgstr "შემოხვევა"
+msgstr ""
 
 #: gtk/gtkspinbutton.c:420
 msgid "Whether a spin button should wrap upon reaching its limits"
@@ -7473,7 +7466,7 @@ msgstr ""
 
 #: gtk/gtkstack.c:530 gtk/gtktoolbutton.c:287
 msgid "Icon name"
-msgstr "ხატულის სახელი"
+msgstr ""
 
 #: gtk/gtkstack.c:531
 msgid "The icon name of the child page"
@@ -7527,7 +7520,7 @@ msgstr ""
 
 #: gtk/gtkstyleproperty.c:109
 msgid "Property name"
-msgstr "თვისების სახელი"
+msgstr ""
 
 #: gtk/gtkstyleproperty.c:110
 msgid "The name of the property"
@@ -7627,7 +7620,7 @@ msgstr ""
 
 #: gtk/gtktexttag.c:206
 msgid "Tag name"
-msgstr "ჭდის სახელი"
+msgstr ""
 
 #: gtk/gtktexttag.c:207
 msgid "Name used to refer to the text tag. NULL for anonymous tags"
@@ -7712,7 +7705,7 @@ msgstr ""
 
 #: gtk/gtktexttag.c:465 gtk/gtktextview.c:934
 msgid "Indent"
-msgstr "შეწევა"
+msgstr "Ахьаҵ"
 
 #: gtk/gtktexttag.c:466 gtk/gtktextview.c:935
 msgid "Amount to indent the paragraph, in pixels"
@@ -7775,7 +7768,7 @@ msgstr ""
 
 #: gtk/gtktexttag.c:598
 msgid "Invisible"
-msgstr "უხილავია"
+msgstr ""
 
 #: gtk/gtktexttag.c:599
 msgid "Whether this text is hidden."
@@ -7807,7 +7800,7 @@ msgstr ""
 
 #: gtk/gtktexttag.c:663
 msgid "Fallback"
-msgstr "გადართვა შეცდომის შემთხვევაში"
+msgstr ""
 
 #: gtk/gtktexttag.c:664
 msgid "Whether font fallback is enabled."
@@ -8019,7 +8012,7 @@ msgstr ""
 
 #: gtk/gtktextview.c:958
 msgid "Buffer"
-msgstr "ბaფერი"
+msgstr ""
 
 #: gtk/gtktextview.c:959
 msgid "The buffer which is displayed"
@@ -8039,7 +8032,7 @@ msgstr ""
 
 #: gtk/gtktextview.c:1063
 msgid "Monospace"
-msgstr "ერთსიგანიანი"
+msgstr ""
 
 #: gtk/gtktextview.c:1064
 msgid "Whether to use a monospace font"
@@ -8243,7 +8236,7 @@ msgstr ""
 
 #: gtk/gtktoolitemgroup.c:1709
 msgid "New Row"
-msgstr "ახალი მწკრივი"
+msgstr ""
 
 #: gtk/gtktoolitemgroup.c:1710
 msgid "Whether the item should start a new row"
@@ -8263,7 +8256,7 @@ msgstr ""
 
 #: gtk/gtktoolpalette.c:1012
 msgid "Exclusive"
-msgstr "ექსკლუზიური"
+msgstr ""
 
 #: gtk/gtktoolpalette.c:1013
 msgid "Whether the item group should be the only expanded at a given time"
@@ -8372,7 +8365,7 @@ msgstr ""
 
 #: gtk/gtktreeview.c:1082
 msgid "Enable Search"
-msgstr "ძებნის ჩართვა"
+msgstr ""
 
 #: gtk/gtktreeview.c:1083
 msgid "View allows user to search through columns interactively"
@@ -8380,7 +8373,7 @@ msgstr ""
 
 #: gtk/gtktreeview.c:1089
 msgid "Search Column"
-msgstr "ძებნის სვეტი"
+msgstr ""
 
 #: gtk/gtktreeview.c:1090
 msgid "Model column to search through during interactive search"
@@ -8542,7 +8535,7 @@ msgstr ""
 
 #: gtk/gtktreeviewcolumn.c:253 gtk/gtkwindow.c:783
 msgid "Resizable"
-msgstr "შეცვლადი ზომით"
+msgstr ""
 
 #: gtk/gtktreeviewcolumn.c:254
 msgid "Column is user-resizable"
@@ -8558,7 +8551,7 @@ msgstr ""
 
 #: gtk/gtktreeviewcolumn.c:284
 msgid "Sizing"
-msgstr "ზომების შეცვლა"
+msgstr ""
 
 #: gtk/gtktreeviewcolumn.c:285
 msgid "Resize mode of the column"
@@ -8622,7 +8615,7 @@ msgstr ""
 
 #: gtk/gtktreeviewcolumn.c:365
 msgid "Sort order"
-msgstr "დალაგების წესი"
+msgstr ""
 
 #: gtk/gtktreeviewcolumn.c:366
 msgid "Sort direction the sort indicator should indicate"
@@ -8762,7 +8755,7 @@ msgstr ""
 
 #: gtk/gtkwidget.c:1250
 msgid "Style"
-msgstr "სტილი"
+msgstr ""
 
 #: gtk/gtkwidget.c:1251
 msgid ""
@@ -8772,7 +8765,7 @@ msgstr ""
 
 #: gtk/gtkwidget.c:1259
 msgid "Events"
-msgstr "მოვლენები"
+msgstr ""
 
 #: gtk/gtkwidget.c:1260
 msgid "The event mask that decides what kind of GdkEvents this widget gets"
@@ -9000,7 +8993,7 @@ msgstr ""
 
 #: gtk/gtkwidget.c:3622
 msgid "Visited Link Color"
-msgstr "გახსნილი ბმულის ფერი"
+msgstr ""
 
 #: gtk/gtkwidget.c:3623
 msgid "Color of visited links"
@@ -9066,7 +9059,7 @@ msgstr ""
 
 #: gtk/gtkwindow.c:753
 msgid "Window Title"
-msgstr "ფანჯრის სათაური"
+msgstr ""
 
 #: gtk/gtkwindow.c:754
 msgid "The title of the window"
@@ -9207,7 +9200,7 @@ msgstr ""
 
 #: gtk/gtkwindow.c:941
 msgid "Urgent"
-msgstr "გადაუდებელი"
+msgstr ""
 
 #: gtk/gtkwindow.c:942
 msgid "TRUE if the window should be brought to the user's attention."
@@ -9239,7 +9232,7 @@ msgstr ""
 
 #: gtk/gtkwindow.c:997
 msgid "Deletable"
-msgstr "წაშლადი"
+msgstr ""
 
 #: gtk/gtkwindow.c:998
 msgid "Whether the window frame should have a close button"
@@ -9283,7 +9276,7 @@ msgstr ""
 
 #: gtk/gtkwindow.c:1093
 msgid "Whether the window is maximized"
-msgstr ""
+msgstr "Аԥенџьыр ашәагаа иреиҳаӡоу аума?"
 
 #: gtk/gtkwindow.c:1114
 msgid "GtkApplication"
@@ -9308,3 +9301,823 @@ msgstr ""
 #: modules/printbackends/cups/gtkprintercups.c:94
 msgid "The title of the color profile to use"
 msgstr ""
+
+msgid "  Search for the Contact  or double-click here to create a new Contact."
+msgstr "  Ишәыԥшаа аимадара,  мамзар абраҟа шәақәыӷәӷәа аҿыц аԥҵаразы."
+
+msgid "  Search for the Contact."
+msgstr "  Аимадара аԥшаара."
+
+msgid "  Searching for the Contacts…"
+msgstr "  Аимадарақәа рыԥшаара…"
+
+msgid "  There are no items to show in this view."
+msgstr "  Иҟаӡам аелементқәа ари аԥенџьыр аҟны иаарԥшразы."
+
+msgid ""
+"  There are no items to show in this view.  Double-click here to create a "
+"new Contact."
+msgstr ""
+"  Иҟаӡам аелементқәа ари аԥенџьыр аҟны иаарԥшразы.  Ҩынтә абраҟа шәақәыӷәӷәа "
+"аимадара ҿыц аԥҵаразы"
+
+msgid "--%s is not supported for this dialog "
+msgstr "--%s ари аиҿцәажәара  иаднакылаӡом"
+
+msgid ""
+"%s\": %s\t«%s»: %s\n"
+"\t“%s”\t«%s»\n"
+"\t“%s” created successfully\tАрхив  «%s» лԥхала иаԥҵоуп\n"
+"\t“%s” is not a valid plugin file\t«%s»  ииашоу афаил амодуль акәӡам\n"
+"\t“%s” is running in the background\t“%s” ақәыԥшылараҟны аус ауеит\n"
+"\t“%s” locations are not supported.\tАҭыӡҭыԥқәа   «%s»  иаднакылом\n"
+"\t“<node/>”\t“<node/>”\n"
+"\t“source-id” not available\t“source-id” ахь анеира залыршахом\n"
+"\t(\t(\n"
+"\t(_G)AWK\t(_G)AWK\n"
+"\t('', 'KNYC', nothing)\t('', 'UUEE', nothing)\n"
+"\t(%'d\t(%'d\n"
+"\t(%s)\t(%s)\n"
+"\t(Completed\t(Ихырқәшоуп\n"
+"\t(correct spelling)\t(ииашаны анҵашьа)\n"
+"\t(deadlock?)\t(анибакылара)\n"
+"\t(deadlock?) \t(анибакылара)\n"
+"\t(Deprecated) Proxy authentication password\tАамҭалатәи ахаҭареилкаара "
+"аиԥырҟьара\n"
+"\t(Deprecated) Proxy authentication user name\tАамҭалатәи ахаҭареилкаара "
+"аиԥырҟьара\n"
+"\t(Due\t(Арыцхә азы\n"
+"\t(Empty)\t(Иҭацәуп)\n"
+"\t(no subject)\t(Темада)\n"
+"\t(No Subject)\t(Темада)\n"
+"\t(no suggested words)\t( Ишәыдгалоу ажәақәа  ыҟаӡам)\n"
+"\t(Remaining: %d)\t(Иаанхеит : %d)\n"
+"\t(unnamed)\t(хьӡыда)\n"
+"\t) without opening (\t) иаазыртуа ада (\n"
+"\t[ {'name': <'DuckDuckGo'>, 'url': <'https://duckduckgo.com/?"
+"q=%s&t=epiphany'>, 'bang': <'!ddg'>}, {'name': <'Google'>, 'url': <'https://"
+"www.google.com/search?q=%s'>, 'bang': <'!g'>}, {'name': <'Bing'>, 'url': "
+"<'https://www.bing.com/search?q=%s'>, 'bang': <'!b'>} ]\t[ {'name': "
+"<'DuckDuckGo'>, 'url': <'https://duckduckgo.com/?q=%s&t=epiphany'>, 'bang': "
+"<'!ddg'>}, {'name': <'Google'>, 'url': <'https://www.google.com/search?"
+"q=%s'>, 'bang': <'!g'>}, {'name': <'Bing'>, 'url': <'https://www.bing.com/"
+"search?q=%s'>, 'bang': <'!b'>} ]\n"
+"\t[ {'name': <'DuckDuckGo'>, 'url': <'https://duckduckgo.com/?"
+"q=%s&t=epiphany'>, 'bang': <'!ddg'>}, {'name': <'Google'>, 'url': <'https://"
+"www.google.com/search?q=%s'>, 'bang': <'!g'>}, {'name': <'Bing'>, 'url': "
+"<'https://www.bing.com/search?q=%s'>, 'bang': <'!b'>} ]\t[ {'name': "
+"<'DuckDuckGo'>, 'url': <'https://duckduckgo.com/?q=%s&t=epiphany'>, 'bang': "
+"<'!ddg'>}, {'name': <'Google'>, 'url': <'https://www.google.com/search?"
+"q=%s'>, 'bang': <'!g'>}, {'name': <'Bing'>, 'url': <'https://www.bing.com/"
+"search?q=%s'>, 'bang': <'!b'>} ]\n"
+"\t[ 'Human', 'Alice', 'Bob', 'Carol', 'Dave', 'Eve' ]\t['Ауаҩԥсы' ,  "
+"'Алиас', 'Инал', 'Саид', 'Наала', 'Милана' ]\n"
+"\t[-e|-- COMMAND [ARGUMENT...]]\t[-e|-- АДҴА [АҴАҴӶӘЫ...]]\n"
+"\t['attachment','attaching','attached','enclosed']\t['аттач','аҭаҵа','attachment','attaching','attached','enclosed']\n"
+"\t['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']\t['UTF-8', 'CURRENT', "
+"'ISO-8859-15', 'UTF-16']\n"
+"\t[]\t[]\n"
+"\t[%s] Object class '<b>%s</b>' from %s %d.%d is deprecated \tАобиект акласс "
+"'<b>%s</b>' %s %d.%d аҟынтә иажәхьеит\n"
+"\t[%s] Object class '<b>%s</b>' was introduced in %s %d.%d \t[%s] Аобиект "
+"акласс '<b>%s</b>' ҭагалан %s %d.%d ахь\n"
+"\t[%s] Packing property '<b>%s</b>' of object class '<b>%s</b>' was "
+"introduced in %s %d.%d \t [%s]«<b>%s</b>» архиара  аҷыдаҟазшьа  «<b>%s</b>» "
+"рыкласс иаҵанакуа аобиектқәа ҭагалан %s %d.%d ахь\n"
+"\t[%s] Property '<b>%s</b>' of object class '<b>%s</b>' is deprecated \t[%s] "
+"Аҷыдаҟазшьа «<b>%s</b>» аобиект «<b>%s</b>» акласс  ажәит\n"
+"\t[%s] Property '<b>%s</b>' of object class '<b>%s</b>' was introduced in %s "
+"%d.%d \t[%s]Аҷыдаҟазшьа «<b>%s</b>» аобиект «<b>%s</b>» акласс  иаҵанакуа "
+"ҭагалан %s %d.%d ахь\n"
+"\t[%s] Signal '<b>%s</b>' of object class '<b>%s</b>' is deprecated "
+"\t«<b>%s</b>» асигнал   акласс иаҵанакуа аобиект «<b>%s</b>» ажәуп\n"
+"\t[%s] Signal '<b>%s</b>' of object class '<b>%s</b>' was introduced in %s "
+"%d.%d \t[%s] «<b>%s</b>» асигнал   акласс иаҵанакуа аобиект «<b>%s</"
+"b>»ҭагалан %s %d.%d ахь\n"
+"\t[<biblioentry.label/>]\t[<biblioentry.label/>]\n"
+"\t[<citation.label/>]\t[<citation.label/>]\n"
+"\t[ARGS…]\t[АҴАҴӶӘҚӘА…]\n"
+"\t[FILE…]\tФАИЛ\n"
+"\t[FILE…|URI]\t[FILE...|URI]\n"
+"\t[URI…]\t[URI…]\n"
+"\t[URI] [URI] …\t[URI] [URI] …\n"
+"\t{0}\t{0}\n"
+"\t{0}  If you choose to continue, you may not have access to some of your "
+"old data.\t{0}  Иацышәҵар шәҭахызар, ажәытә дыррақәа ԥыҭк рахь анеира азин "
+"шәцәыӡыр шәылшоит.\n"
+"\t{0}  If you choose to continue, you may not have access to some of your "
+"old data. \t{0}  Иацышәҵар шәҭахызар, ажәытә дыррақәа ԥыҭк рахь анеира азин "
+"шәцәыӡыр шәылшоит. \n"
+"\t{0} by {1}\t{0} аҟны {1}\n"
+"\t@%\"Projects@%s"
+msgstr "_Апроектқәа рныхра"
+
+msgid "%1$s   <small>%2$s</small>"
+msgstr "%1$s   <small>%2$s</small>"
+
+msgid "%1$s and one more task msgid_plural: %1$s and %2$d other tasks"
+msgstr ""
+"msgstr[0]: %1$s даҽа %2$d ҳасабтәки msgstr[1]: %1$s  даҽа %2$d  ҳасабтәқәеи "
+"msgstr[2]: %1$sегьырҭ  %2$d  ҳасабтәқәеи"
+
+msgid ""
+"%1$u day and %2$u hour before msgid_plural: %1$u day and %2$u hours before"
+msgstr ""
+"msgstr[0]: %1$u ҽнаки и %2$u сааҭки ҟалаанӡа msgstr[1]: %1$u ҽнаки %2$u "
+"сааҭки ҟалаанӡа msgstr[2]: %1$u ҽнаки %2$u сааҭки ҟалаанӡа"
+
+msgid ""
+"%1$u day and %2$u minute before msgid_plural: %1$u day and %2$u minutes "
+"before"
+msgstr ""
+"msgstr[0]: %1$u ҽнаки %2$u минуҭки ҟалаанӡа msgstr[1]: %1$u ҽнаки %2$u "
+"минуҭки ҟалаанӡа msgstr[2]: %1$u ҽнаки %2$u минуҭки ҟалаанӡа\n"
+"\t%1$u day before msgid_plural: %1$u days before\tmsgstr[0]: %1$u ҽнак шагоу "
+"msgstr[1]: %1$u мшы шагоу msgstr[2]: %1$u мшы шагоу\n"
+"\t%1$u day, %2$u hour, and %3$u minute before msgid_plural: %1$u day, %2$u "
+"hour, and %3$u minutes before\tmsgstr[0]: %1$u ҽнаки, %2$u сааҭки %3$u "
+"минуҭки ҟалаанӡа msgstr[1]: %1$u ҽнаки, %2$u сааҭки %3$u минуҭки  ҟалаанӡа "
+"msgstr[2]: %1$u ҽнаки, %2$u сааҭки %3$u минуҭки ҟалаанӡа\n"
+"\t%1$u day, %2$u hours, and %3$u minute before msgid_plural: %1$u day, %2$u "
+"hours, and %3$u minutes before\tmsgstr[0]: %1$u ҽнаки, %2$u сааҭки %3$u "
+"минуҭ ки ҟалаанӡа msgstr[1]: %1$u ҽнаки, %2$u сааҭки %3$u минуҭки  ҟалаанӡа "
+"msgstr[2]: %1$u ҽнаки, %2$u сааҭки %3$u минуҭки ҟалаанӡа\n"
+"\t%1$u days and %2$u hour before msgid_plural: %1$u days and %2$u hours "
+"before\tmsgstr[0]: %1$u мши %2$u сааҭки ҟалаанӡа msgstr[1]: %1$u мши %2$u "
+"сааҭки ҟалаанӡа msgstr[2]: %1$u мши %2$u сааҭки ҟалаанӡа\n"
+"\t%1$u days and %2$u minute before msgid_plural: %1$u days and %2$u minutes "
+"before\tmsgstr[0]: %1$u мши и %2$u минуҭки ҟалаанӡа msgstr[1]: %1$u мши и "
+"%2$u минуҭки ҟалаанӡа msgstr[2]: %1$u мши и %2$u минуҭки ҟалаанӡа\n"
+"\t%1$u days, %2$u hour, and %3$u minute before msgid_plural: %1$u days, %2$u "
+"hour, and %3$u minutes before\tmsgstr[0]: %1$u мши, %2$u сааҭки, и %3$u "
+"минуҭки ҟалаанӡа msgstr[1]: %1$u мши, %2$u сааҭки, и %3$u минуҭки ҟалаанӡа "
+"msgstr[2]: %1$u мши, %2$u сааҭки, и %3$u минуҭки ҟалаанӡа\n"
+"\t%1$u days, %2$u hours, and %3$u minute before msgid_plural: %1$u days, "
+"%2$u hours, and %3$u minutes before\tmsgstr[0]: %1$u мши, %2$u сааҭки, и "
+"%3$u минуҭки ҟалаанӡа msgstr[1]: %1$u мши, %2$u сааҭки, и %3$u минуҭки "
+"ҟалаанӡа msgstr[2]: %1$u мши, %2$u сааҭки, и %3$u минуҭки ҟалаанӡа\n"
+"\t%1$u hour before msgid_plural: %1$u hours before\tmsgstr[0]: %1$u сааҭк "
+"иҟалаанӡа msgstr[1]: %1$u сааҭк иҟалаанӡа msgstr[2]: %1$u сааҭк иҟалаанӡа\n"
+"\t%1$u minute before msgid_plural: %1$u minutes before\tmsgstr[0]: %1$u "
+"минуҭк ҟалаанӡа msgstr[1]: %1$u минуҭк ҟалаанӡа msgstr[2]: %1$u минуҭк "
+"ҟалаанӡа\n"
+"\t%2$s. You have %1$u try left msgid_plural: %2$s. You have %1$u tries "
+"left\tmsgstr[0]: %2$s. ишәзаанхеит %1$u ҽазышәарак msgstr[1]: %2$s. "
+"ишәзаанхеит %1$u ҽазышәарак msgstr[2]: %2$s. ишәзаанхеит %1$u ҽазышәарак\n"
+"\t%A\t%A\n"
+"\t%a\t%a\n"
+"\t%A %B %-d\t%A, %-d %B\n"
+"\t%a %b %-e_%l:%M %p\t%a, %-e %B_%l∶%M %p\n"
+"\t%a %b %-e_%l:%M:%S %p\t%a, %-e %B,_%l∶%M∶%S %p\n"
+"\t%a %b %-e_%R\t%a, %-e %B_%R\n"
+"\t%a %b %-e_%R:%S\t%a, %-e %B_%R:%S\n"
+"\t%a %b %e %H:%M:%S %Y\t%a, %-d %b %Y, %H∶%M∶%S\n"
+"\t%A %B %e %Y\t%A, %-d %B %Y\n"
+"\t%a %d %b\t%a, %d %b\n"
+"\t%A %d %B\t%A, %d %b\n"
+"\t%A %d %b %Y\t%A, %d %b. %Y\n"
+"\t%a %d %b %Y\t%a, %d %b. %Y\n"
+"\t%A %H:%M\t%A %H:%M\n"
+"\t%a %H:%M\t%a %H:%M\n"
+"\t%A %H:%M:%S\t%A %H:%M:%S\n"
+"\t%a %H∶%M\t%a, %H:%M\n"
+"\t%a %I∶%M %p\t%a, %I∶%M %p\n"
+"\t%a %l:%M %p\t%a %l:%M %p\n"
+"\t%A %l:%M %p\t%A %l:%M %p\n"
+"\t%a %l:%M:%S %p\t%a, %l∶%M∶%S %p\n"
+"\t%A %l:%M:%S %p\t%A %l:%M:%S %p\n"
+"\t%a %l∶%M %p\t%a %H:%M\n"
+"\t%a %m/%d/%Y %H:%M:%S\t%a, %d.%m.%Y %H:%M:%S\n"
+"\t%a %m/%d/%Y %I:%M:%S %p\t%a, %d.%m.%Y %I:%M:%S %p\n"
+"\t%a %R\t%a, %R\n"
+"\t%a %R:%S\t%a, %R:%S\n"
+"\t%a, %b %d / %H∶%M\t%a, %d %b. / %H∶%M\n"
+"\t%A, %B %e\t%A, %e %b\n"
+"\t%A, %B %e %H:%M\t%A, %e %b. %H:%M\n"
+"\t%A, %B %e %H:%M:%S\t%A, %e %b. %H:%M:%S\n"
+"\t%A, %B %e %l:%M %p\t%A, %e %b. %I:%M:%p\n"
+"\t%A, %B %e %l:%M:%S %p\t%A, %e %b. %I:%M:%S %p\n"
+"\t%A, %B %e, %Y\t%A, %e %b. %Y\n"
+"\t%A, %B %e, %Y %H:%M\t%A, %e %b. %Y %H:%M\n"
+"\t%A, %B %e, %Y %H:%M:%S\t%A, %e %b. %Y %H:%M:%S\n"
+"\t%A, %B %e, %Y %l:%M %p\t%A, %e %b. %Y %I:%M %p\n"
+"\t%A, %B %e, %Y %l:%M:%S %p\t%A, %e %b. %Y %I:%M:%S %p\n"
+"\t%a, %d %B %Y\t%A, %d %b. %Y\n"
+"\t%a, %d %B %Y  %X\t%A, %d %b. %Y  %X\n"
+"\t%a, %d %B %Y %X\t%A, %d %b. %Y %X\n"
+"\t%A, %H∶%M\t%A, %H∶%M\n"
+"\t%A, %l∶%M %p\t%A, %-l∶%M %p\n"
+"\t%B\t%B\n"
+"\t%B %-d\t%-d %B %Y\n"
+"\t%B %-d %Y\t%-d %B %Y\n"
+"\t%B %-d %Y, %H∶%M\t%-d %B %Y, %H∶%M\n"
+"\t%B %-d %Y, %l∶%M %p\t%-d %B %Y, %l∶%M %p\n"
+"\t%B %-d, %H∶%M\t%-d %B, %H∶%M\n"
+"\t%B %-d, %l∶%M %p\t%-d %B, %l∶%M %p\n"
+"\t%b %-e_%l:%M %p\t%a, %-e %B_%l∶%M %p\n"
+"\t%b %-e_%l:%M:%S %p\t%a, %-e %B_%l∶%M∶%S %p\n"
+"\t%b %-e_%R\t%a, %-e %B_%R\n"
+"\t%b %-e_%R:%S\t%a, %-e %B_%R:%S\n"
+"\t%b %d %H∶%M\t%e %b., %H:%M\n"
+"\t%b %d %I∶%M %p\t%e %b., %I∶%M %p\n"
+"\t%b %d %l:%M %p\t%b. %d %l:%M %p\n"
+"\t%b %d %l∶%M %p\t%-d %B %H:%M\n"
+"\t%b %d %Y\t%e %b. %Y\n"
+"\t%b %e\t%b %e\n"
+"\t%b %e %H:%M\t%e %b., %H:%M\n"
+"\t%b %e %H:%M:%S\t%e %b., %H:%M:%S\n"
+"\t%b %e %l:%M %p\t%e %b., %l:%M %p\n"
+"\t%b %e %l:%M:%S %p\t%e %b., %l:%M:%S %p\n"
+"\t%b %e %Y %H:%M\t%e %b. %Y, %H:%M\n"
+"\t%b %e %Y %H:%M:%S\t%e %b. %Y, %H:%M:%S\n"
+"\t%b %e %Y %l:%M %p\t%e %b. %Y, %l:%M %p\n"
+"\t%b %e %Y %l:%M:%S %p\t%e %b. %Y, %l:%M:%S %p\n"
+"\t%b %e %Y, %H∶%M\t%b %e %Y, %H∶%M\n"
+"\t%b %e %Y, %I∶%M %p\t%b %e %Y, %I∶%M %p\n"
+"\t%B %e %Y, %I∶%M∶%S %p\t%e %B %Y, %H:%M:%S\n"
+"\t%b %e, %H∶%M\t%b %e, %H∶%M\n"
+"\t%b %e, %I∶%M %p\t%b %e, %I∶%M %p\n"
+"\t%b %e, %Y\t%-d %b %Y\n"
+"\t%B %Y\t%B %Y\n"
+"\t%c\t%c\n"
+"\t%d\t%d\n"
+"\t%d / %d\t%d / %d\n"
+"\t%d %%\t%d %%\n"
+"\t%d %%\t%d %%\n"
+"\t%d %%\t%d %%\n"
+"\t%d %b\t%d %b\n"
+"\t%d %B\t%d %B\n"
+"\t%d %b %Y\t%d %b. %Y\n"
+"\t%d %B %Y\t%d %b. %Y\n"
+"\t%d %B %Y, %H:%M\t%-d %B %Y, %H∶%M\n"
+"\t%d °C\t%d °C\n"
+"\t%d °C\t%d °C\n"
+"\t%d °F\t%d °F\n"
+"\t%d °F\t%d °F\n"
+"\t%d × %d\t%d × %d\n"
+"\t%d × %d, %d mine msgid_plural: %d × %d, %d mines\tmsgstr[0]: %d × %d, %d "
+"амина msgstr[1]: %d × %d, %d минак msgstr[2]: %d × %d, %d минак\n"
+"\t%d Address msgid_plural: %d Addresses\tmsgstr[0]: %d ҭыӡҭыԥк msgstr[1]: %d "
+"ҭыӡҭыԥк msgstr[2]: %d ҭыӡҭыԥк\n"
+"\t%d attached message msgid_plural: %d attached messages\tmsgstr[0]: %d "
+"иагәылҵоу ацҳамҭақәа msgstr[1]: %d иагәылаҵоу ацҳамҭақәа msgstr[2]: %d "
+"иагәылаҵоу ацҳамҭақәа\n"
+"\t%d B/s\t%d Б/с\n"
+"\t%d byte msgid_plural: %d bytes\tmsgstr[0]: %d баитк msgstr[1]: %d баитк "
+"msgstr[2]: %d баитк\n"
+"\t%d dpi\t%d dpi\n"
+"\t%d ft\t%d фт\n"
+"\t%d ft\t%d фт\n"
+"\t%d K\t%d K\n"
+"\t%d K\t%d K\n"
+"\t%d km\t%d км\n"
+"\t%d km\t%d км\n"
+"\t%d m\t%d м\n"
+"\t%d m\t%d м\n"
+"\t%d Mb/s\t%d Мб/с\n"
+"\t%d Mb/s (%1.1f GHz)\t%d Мб/с (%1.1f ГГц)\n"
+"\t%d mi\t%d ми\n"
+"\t%d mi\t%d ми\n"
+"\t%d of %d\t%d аҟынтә %d\n"
+"\t%d of %u\t%d аҟынтәи %u\n"
+"\t%d-%b-%Y\t%d-%b.-%Y\n"
+"\t%d-bit msgid_plural: %d-bit\tmsgstr[0]: %d-абит msgstr[1]: %d-битк "
+"msgstr[2]: %d-битк\n"
+"\t%d:%02d\t%d:%02d\n"
+"\t%d:%02d:%02d\t%d:%02d:%02d\n"
+"\t%d:%02d:%02d.%03d\t%d:%02d:%02d.%03d\n"
+"\t%d:%02d.%03d\t%d:%02d.%03d\n"
+"\t%d. %s\t%d. %s\n"
+"\t%d%%\t%d%%\n"
+"\t%d×%d\t%d×%d\n"
+"\t%d×%d (%s)\t%d×%d (%s)\n"
+"\t%e %B %Y\t%e %b. %Y\n"
+"\t%e %B %Y, %l:%M %p\t%-d %B %Y, %l∶%M %p\n"
+"\t%e %B %Y, %R\t%-d %B %Y, %R\n"
+"\t%F %T\t%F %T\n"
+"\t%FT%T\t%FT%T\n"
+"\t%g%t%m%t%f\t%d%t%g%t%m%t%f\n"
+"\t%H hours and %M minutes\t%H сааҭи %M минуҭи\n"
+"\t%H hours, %M minutes and %S seconds\t%H сааҭ, %M минуҭ и %S секунд\n"
+"\t%H:%M\t%H:%M\n"
+"\t%H:%M:%S\t%H:%M:%S\n"
+"\t%H∶%M\t%H∶%M\n"
+"\t%i %s %i %s\t%i %s %i %s\n"
+"\t%i × %i pixel msgid_plural: %i × %i pixels\tmsgstr[0]: %i × %i пиксельк "
+"msgstr[1]: %i × %i пиксельк msgstr[2]: %i × %i пиксельк\n"
+"\t%i × %i pixel  %s    %i%% msgid_plural: %i × %i pixels  %s    %i%%"
+"\tmsgstr[0]: %i × %i пиксельк  %s    %i%% msgstr[1]: %i × %i пиксельк  %s    "
+"%i%% msgstr[2]: %i × %i пиксельк  %s    %i%%\n"
+"\t%i × %i pixels\t%i × %i пиксельк\n"
+"\t%I:%M:%S %p\t%I∶%M∶%S %p\n"
+"\t%k:%M\t%k:%M\n"
+"\t%l:%M %p\t%l:%M %p\n"
+"\t%l:%M:%S %p\t%l∶%M∶%S %p\n"
+"\t%l∶%M %p\t%l∶%M %p\n"
+"\t%ld × %ld pixel msgid_plural: %ld × %ld pixels\tmsgstr[0]: %ld × %ld "
+"пиксельк msgstr[1]: %ld × %ld пиксельк msgstr[2]: %ld × %ld пиксельк\n"
+"\t%m/%d\t%d/%m\n"
+"\t%m/%d/%y\t%d.%m.%y\n"
+"\t%OB\t%OB\n"
+"\t%OB %Y\t%OB %Y\n"
+"\t%p (%s)\t%p (%s)\n"
+"\t%R\t%R\n"
+"\t%R:%S\t%R:%S\n"
+"\t%s\t%s\n"
+"\t%s Run '%s --help' to see a full list of available command line options. "
+"\t%s  Аус ашәыруы  «%s --help» анеиразин ахьшәымоу адҵатә ҵәаҳәа  "
+"ахышәарақәа рыхҩылаақәа зегьы рыхәаԥшразы.\n"
+"\t%s – %s\t%s – %s\n"
+"\t%s — %s\t%s — %s\n"
+"\t%s — Account Activity\t%s- аҳасабрбатә нҵамҭа активра\n"
+"\t%s — Evolution\t%s — Evolution\n"
+"\t%s (*.%s)\t%s (*.%s)\n"
+"\t%s (%.1f%%)\t%s (%.1f%%)\n"
+"\t%s (%d bit)\t%s (%d бит)\n"
+"\t%s (%d)\t%s (%d)\n"
+"\t%s (%s, for account %s)\t%s (%s, аҳасабрбатә нҵамҭа %s азы)\n"
+"\t%s (%s)\t%s (%s)\n"
+"\t%s (%u%s)\t%s (%u%s)\n"
+"\t%s (Administrator)\t%s(Анаԥхгаҩы)\n"
+"\t%s (application)\t%s (аԥшьы)\n"
+"\t%s (CMake)\t%s (CMake)\n"
+"\t%s (GStreamer plugin)\t%s (амодуль GStreamer)\n"
+"\t%s (library)\t%s (абиблиотека)\n"
+"\t%s (Meson)\t%s (Meson)\n"
+"\t%s (PID %u)\t%s (PID %u)\n"
+"\t%s (SSID: %s)\t%s (SSID: %s)\n"
+"\t%s (this calendar is read-only)\t%s (ари амзар «аԥхьара мацара» арежим "
+"икәгылоуп)\n"
+"\t%s (You)\t%s (%s)\n"
+"\t%s [OPTION…] COMMAND  Execute COMMAND while inhibiting some session "
+"functionality.    -h, --help        Show this help   --version         Show "
+"program version   --app-id ID       The application id to "
+"use                     when inhibiting (optional)   --reason REASON   The "
+"reason for inhibiting (optional)   --inhibit ARG     Things to inhibit, "
+"colon-separated list of:                     logout, switch-user, suspend, "
+"idle, automount   --inhibit-only    Do not launch COMMAND and wait forever "
+"instead   -l, --list        List the existing inhibitions, and exit  If no --"
+"inhibit option is specified, idle is assumed. \t%s [АЛШАРА…] АДҴА  Асеанс "
+"афункциақәак аанкыланы адҵа COMMAND анагӡара.    -h, --help        Аилыркаа "
+"арбара   --version         Апрограмма ахкы арбара   --app-id ID       Аԥшьы "
+"аидентификациа азура   ахархәаразы                      "
+"аанкылараан(ихымԥадатәиым)  --reason REASON   Азин амҭара мзыс иамоу "
+"(ихымԥадатәиым)   --inhibit ARG     Азин зымхтәу, ахьӡынҵа,аҩҟәаԥ ала "
+"еиҩшоу:                     logout, switch-user, suspend, idle, automount   "
+"--inhibit-only    Иаҿашәымкын COMMAND,уи ацымхәрас наунагӡа шәазыԥшыз    -l, "
+"--list        Ақәиҭымтәрақәа рыхьӡынҵа , насгьы урҭ рыриааишьа  Алшара --"
+"inhibit арбамзар, азыԥшра арежим аҿакхоит . \n"
+"\t%s [OPTION…] COMMAND  Execute COMMAND while inhibiting some session "
+"functionality.  -h, --help Show this help --version Show program version --"
+"app-id ID The application id to use when inhibiting (optional) --reason "
+"REASON The reason for inhibiting (optional) --inhibit ARG Things to inhibit, "
+"colon-separated list of: logout, switch-user, suspend, idle, automount --"
+"inhibit-only Do not launch COMMAND and wait forever instead -l, --list List "
+"the existing inhibitions, and exit  If no --inhibit option is specified, "
+"idle is assumed.\t%s [АЛШАРА…] АДҴА  Асеанс афункциақәак аанкыланы адҵа "
+"COMMAND анагӡара.  -h, --help Аилыркаа арбара --version Апрограмма ахкы "
+"арбара --app-id ID Аԥшьы аидентификациа азура  ахархәаразы  "
+"аанкылараан(ихымԥадатәиым) --reason REASON Азин амҭара мзыс иамоу "
+"(ихымԥадатәиым) --inhibit ARG Азин зымхтәу, ахьӡынҵа,аҩҟәаԥ ала еиҩшоу: "
+"logout, switch-user, suspend, idle, automount --inhibit-only Иаҿашәымкын "
+"COMMAND,уи ацымхәрас наунагӡа шәазыԥшыз  -l, --list Ақәиҭымтәрақәа "
+"рыхьӡынҵа , насгьы урҭ рыриааишьа  Алшара --inhibit арбамзар, азыԥшра арежим "
+"аҿакхоит .\n"
+"\t%s / %s\t%s / %s\n"
+"\t%s %g — %g, default %g\t%s %g — %g, ишдыру еиԥш %g\n"
+"\t%s %g — %g, default %g\t%s %g — %g, ишдыру еиԥш %g\n"
+"\t%s %s\tThis is a monitor vendor name followed by product/model name where "
+"size in inches could not be calculated, e.g. Dell U2414H\n"
+"\t%s %s\t%s %s\n"
+"\t%s %s %s\t%s %s %s\n"
+"\t%s %s after the end\t%s %s ианхыркәшахалак ашьҭахь\n"
+"\t%s %s after the start\t%s %s ианалагалак ашьҭахь\n"
+"\t%s %s before the end\t%s %s ихыркәшахаанӡа\n"
+"\t%s %s before the start\t%s %s иалагаанӡа\n"
+"\t%s %s is no longer supported.\t%s %s уаҳа иаднакылом\n"
+"\t%s • %s\t%s • %s\n"
+"\t%s ˚C\t%s ˚C\n"
+"\t%s ˚F\t%s ˚F\n"
+"\t%s ˚R\t%s ˚R\n"
+"\t%s <b>%s</b>\t%s <b>%s</b>\n"
+"\t%s <b>%s</b> <span fgalpha='36044'>%s</span>\t%s <b>%s</b> <span "
+"fgalpha='36044'>%s</span>\n"
+"\t%s <i>(default)</i>\t%s <i>(ишыҟоу еиԥш)</i>\n"
+"\t%s acres\t%s акрқәа\n"
+"\t%s at %s\t%s аҟны %s\n"
+"\t%s at the end\t%s анҵәамҭаҿы\n"
+"\t%s at the start\t%s аҿакраан\n"
+"\t%s attachment\tагәылаҵа %s\n"
+"\t%s au\t%s а. е.\n"
+"\t%s Available\t%s анеира ахьауа\n"
+"\t%s B\t%s Б\n"
+"\t%s b\t%s абит\n"
+"\t%s bit msgid_plural: %s bits\tmsgstr[0]: %s абит msgstr[1]: %s битк "
+"msgstr[2]: %s абит\n"
+"\t%s byte msgid_plural: %s bytes\tmsgstr[0]: %s баитк msgstr[1]: %s баитк "
+"msgstr[2]: %s баитк\n"
+"\t%s centuries\t%s ашәышықәсақәа\n"
+"\t%s days\t%s мшы\n"
+"\t%s degrees\t%s аградусқәа\n"
+"\t%s Dictionary\tАжәар %s\n"
+"\t%s for %s %p\t%s %p рзы %s \n"
+"\t%s gradians\t%s аградқәа\n"
+"\t%s h\t%s h\n"
+"\t%s has been updated.\t%s рҿыцын.\n"
+"\t%s has sent back the following assigned task response:\t%s ирхынҳәит "
+"анеҩстәи аҭак иарбоу адҵа ахь:\n"
+"\t%s has sent back the following meeting response:\t%s ирхынҳәит анеҩстәи "
+"аҭак аизара ахь:\n"
+"\t%s Hotspot\tАнеирҭа аҭыԥ %s аҿакуп\n"
+"\t%s Hotspot Active\tАнеирҭа аҭыԥ  %s аҿакуп \n"
+"\t%s hours\t%s сааҭ\n"
+"\t%s Hz\t%s Hz\n"
+"\t%s in %s\t%s в %s\n"
+"\t%s is not included in %s\t%s арбаӡам %s аҟны\n"
+"\t%s is safe\t«%s» ишәарҭам\n"
+"\t%s K\t%s K\n"
+"\t%s kb\t%s кбит\n"
+"\t%s kB\t%s кБ\n"
+"\t%s Kib\t%s Kибит\n"
+"\t%s KiB\t%s KиБ\n"
+"\t%s ly\t%s св. г.\n"
+"\t%s minutes\t%s минуҭ\n"
+"\t%s months\t%s мзы\n"
+"\t%s ms\t%s мс\n"
+"\t%s nibble\t%s абаитбжа\n"
+"\t%s on chooser\t%s алхраҟны\n"
+"\t%s pc\t%s пк\n"
+"\t%s Properties\tАҟазшьаҷыдақәа   %s\n"
+"\t%s radians\t%s радиан\n"
+"\t%s requires an argument\t%s иаҭахуп ашьаҭаркыга\n"
+"\t%s requires an argument \t%s иаҭахуп ашьаҭаркыга \n"
+"\t%s s\t%s с\n"
+"\t%s Sidebar Row\t%s Аварахьтәи аҵҟьа ацәаҳәа\n"
+"\t%s Total\t%s зегьы\n"
+"\t%s Used\t%s ахархәара роуит\n"
+"\t%s weeks\t%s мчыбжьы\n"
+"\t%s with type %s\t%s измоу хкыс %s\n"
+"\t%s with value @% \"%s@%s"
+
+msgid "%s: %s: error closing: %s "
+msgstr " %s: %s: аркра залымшеит: %s "
+
+msgid "%s: %s: error opening file: %s "
+msgstr "%s: %s: иазаамыртӡеит афаил : %s "
+
+msgid "%s: %s: error parsing file: %s "
+msgstr "%s: %s: иазеилмаргаӡеит афаил : %s "
+
+msgid "%s%s Encoding: %s %s"
+msgstr "%s%s Акодркра: %s %s"
+
+msgid "%s%s Encoding: %s %s Substituting with <b>%s</b> (%s)"
+msgstr "%s%s Акодркра: %s %s иԥсахуа  <b>%s</b> аҟынтә %s "
+
+msgid "%u box has been deleted msgid_plural: %u boxes have been deleted"
+msgstr ""
+"msgstr[0]: %u авиртуалтә машьына аныхын msgstr[1]: %u авиртуалтә машьынақк "
+"аныхын msgstr[2]: %u выируалтә машьынак аныхын"
+
+msgid "%u byte msgid_plural: %u bytes"
+msgstr "msgstr[0]: %u баитк msgstr[1]: %u баитк msgstr[2]: %u баитк"
+
+msgid "%u Input msgid_plural: %u Inputs"
+msgstr ""
+"msgstr[0]: %u аҭалара msgstr[1]: %u  аҭаларақәа msgstr[2]: %u  аҭаларақәа"
+
+msgid "%u Output msgid_plural: %u Outputs"
+msgstr "msgstr[0]: %u ҭыҵрак msgstr[1]: %u ҭыҵрак msgstr[2]: %u ҭыҵрак"
+
+msgid "© 2011 Red Hat, Inc. © 2011-2020 The Contacts Developers"
+msgstr "© 2011 Red Hat, Inc. © 2011-2020 Аимадарақәа рыҟаҵаҩцәа"
+
+msgid ""
+"© 2018-2020 Juan Pablo Ugarte, et al. © 2004-2018 Tristan Van Berkom, Juan "
+"Pablo Ugarte, et al. © 2001-2006 Joaquin Cuenca Abela, Paolo Borelli, et al. "
+"© 2001-2006 Ximian, Inc."
+msgstr ""
+"© 2018-2020 Хуан Пабло Угарте (Juan Pablo Ugarte) уб.егь. © 2004-2018 "
+"Тристан Ван Берком (Tristan Van Berkom), Хуан Пабло Угарте (Juan Pablo "
+"Ugarte) уб.егь. © 2001-2006 Joaquin Cuenca Abela, Paolo Borelli, уб.егь. © "
+"2001-2006 Ximian, Inc."
+
+msgid ""
+"<b>%d key is selected for synchronizing</b> msgid_plural: <b>%d keys are "
+"selected for synchronizing</b>"
+msgstr ""
+"msgstr[0]: <b>%d ацыԥха алхуп </b> асин- хронтәразы msgstr[1]: <b>%d ацыԥха "
+"алхуп </b> асин- хронтәразы msgstr[2]: <b>%d ацыԥха алхуп  </b> асин- "
+"хронтәразы"
+
+msgid "<b>%d</b> mine msgid_plural: <b>%d</b> mines"
+msgstr ""
+"msgstr[0]: <b>%d</b> минак msgstr[1]: <b>%d</b> минак msgstr[2]: <b>%d</b> "
+"минак"
+
+msgid "<b>%s</b>: %s <b>%s</b>: %d×%d <b>%s</b>: %s"
+msgstr "<b>%s</b>: %s <b>%s</b>: %d×%d <b>%s</b>: %s"
+
+msgid ""
+"<big><b>The photo is too large</b></big> The recommended size for a photo on "
+"your key is %d × %d pixels."
+msgstr ""
+"<big><b>Аԥшранҵа амцхә идууп</b></big> Адгаларатә рышәага аԥшранҵақәа "
+"ацаԥхаҟны — %d × %d акәаԥқәа."
+
+msgid ""
+"<big><b>Tips:</b></big>   * Right-click over the treeview to add items.   * "
+"Press Delete to remove the selected item.   * Drag &amp; Drop to reorder.   "
+"* Type column is editable."
+msgstr ""
+"<big><b>Аҵаҳәарақәа:</b></big>   * Аҵлаҟны  аелемент ацҵаразы , аҵла аҵаҟа "
+"аҳәынапԥ арыӷьаратәи пытҟәыр шәақәыӷәӷәа.   * Иалкаау аелементқәа рныхразы "
+"шәақәыӷәӷәа Delete.   * Аелеменқәа реишьҭагылашьа аԥсахразы еиҭажәга урҭ "
+"аҳәынаԥ ала.   * Ахкы аиҵагыла ариашара ҟалоит."
+
+msgid ""
+"<small>In memory of an extraordinary person and professor R.I.P Guido "
+"Macchi</small>"
+msgstr ""
+"<small> Зеиԥш дҟамлац ауаҩԥси апрофессори игәаларшәара иазкны R.I.P. Гвидо "
+"Маки</small>"
+
+msgid "3 × 3 1 minute"
+msgstr "3 × 3        1 минуҭк"
+
+msgid "4 × 4 3 minutes"
+msgstr "4 × 4        3 минуҭк"
+
+msgid "4 × 4 5 minutes"
+msgstr "4 × 4        5 минуҭк"
+
+msgid "5 × 5 15 minutes"
+msgstr "5 × 5        15 минуҭ"
+
+msgid "5 × 5 5 minutes"
+msgstr "5 × 5        5 минуҭк"
+
+msgid ""
+"A problem has occurred and the system can’t recover. Please log out and try "
+"again."
+msgstr ""
+"Иҟалаз агха иахҟьаны асистема зеиҭашьақәмыргылахеит. Асеанс хырқәшаны "
+"шәеиҭаҭал."
+
+msgid ""
+"An automatically saved version of `%s' is more recent.  Would you like to "
+"load the autosave version instead?"
+msgstr ""
+"Автоматикла еиқәырхоу аверсиа \"%s\"  еиҳа иҿыцуп. Ишәҭахума шәара иара "
+"ацынхәрас автоматикла аиқәырхара змоу аверсиа ҭажәгалар. "
+
+msgid "Arguments: "
+msgstr "Аҵаҵӷәқәа:"
+
+msgid "Attachment msgid_plural: Attachments"
+msgstr "msgstr[0]:Агәылаҵа msgstr[1]:Агәылаҵақәа msgstr[2]:Агәылаҵақәа"
+
+msgid "attributes: "
+msgstr "Аҟазшьарбагақәа:"
+
+msgid ""
+"Automatically save the project to an alternate file whenever the project is "
+"modified and the specified timeout elapses"
+msgstr ""
+"Автоматикла апроект даҽа фаилк ахь лассы-лассы аиқәырхара  , апроект "
+"аԥсахраангьы. "
+
+msgid "bit msgid_plural: bits"
+msgstr "msgstr[0]: абит msgstr[1]: битк msgstr[2]: абит"
+
+msgid "Bookmarks will be added here"
+msgstr "Агәылаҵақәа ацҵахоит араҟа"
+
+msgid "byte msgid_plural: bytes"
+msgstr "msgstr[0]: баитк msgstr[1]: баитк msgstr[2]: баитк"
+
+msgid "BytesSourceSeqTimeUnits "
+msgstr "Абаитқәа       Ахықәкы        Азҵаалара        Аамҭа        Ашәара ак"
+
+msgid ""
+"Cannot create a regex for all the transitions, the syntax highlighting "
+"process will be slower than usual. The error was: %s"
+msgstr ""
+"Изалымшахеит аиҭеиҭакрақәа зегьы рзы еиԥырҟьам аҿаԥшылара аԥҵара , "
+"асинтаксис арлашара нагӡахалоит  имырццаыкӡакәа. Агха: %s"
+
+msgid "Clear as many blocks as you can. Fewer clicks means more points."
+msgstr ""
+"Шаҟа шәылшо аблокқәа анышәх. Шаҟа имаҷны шәақәыӷәӷәо аҟара ирацәаны "
+"акәаталақәа шәырҳауоит."
+
+msgid "Command line options could not be parsed: %s "
+msgstr "Адҵатә цәаҳәа ахышәарақәа реилкаара залымшахеит : %s "
+
+msgid ""
+"Congratulations, You Have Defeated the Robots!!  But Can You do it Again?"
+msgstr ""
+"Ишәыдаҳныҳәалоит, шәара ароботқәа шәыриааит!! Ишәылшару еиҭа уи аҟаҵара"
+
+msgid ""
+"Copyright © 2008-2013 Red Hat, Inc. Copyright © 2008-2013 David Zeuthen "
+"Copyright © 2009-2017 The GNOME Project"
+msgstr ""
+"Аԥҵаҩы изин © 2008-2013 Red Hat, Inc. Аԥҵаҩы изин © 2008-2013 David Zeuthen "
+"Аԥҵаҩы изин © 2009-2017 The GNOME Project"
+
+msgid ""
+"Copyright © 2008-2013 Red Hat, Inc. Copyright © 2008-2013 David Zeuthen "
+"Copyright © 2009-2017 The GNOME Project "
+msgstr ""
+"Аԥҵаҩы изин © 2008-2013 Red Hat, Inc. Аԥҵаҩы изин © 2008-2013 David Zeuthen "
+"Аԥҵаҩы изин © 2009-2017 The GNOME Project "
+
+msgid ""
+"Copyright © 2012 – 2021 Red Hat, Inc. Copyright © 2015 – 2018 Umang Jain"
+msgstr ""
+"Аԥҵаҩы изин © 2012 – 2021 Red Hat, Inc. Аԥҵаҩы изин © 2015 – 2018 Umang Jain"
+
+msgid ""
+"Default arguments are “-i -f %F -- %R”, where    %F — stands for the From "
+"address    %R — stands for the recipient addresses"
+msgstr ""
+"Аҵаҵӷәқәа ишыҟоу еиԥш: «-i -f %F -- %R», уаҟа    %F — ашьҭҩы иҭыӡҭыԥ    %R — "
+"аиуаа рҭыӡҭыԥ"
+
+msgid ""
+"Default arguments are “-i -f %F -- %R”, where %F — stands for the From "
+"address %R — stands for the recipient addresses"
+msgstr ""
+"Аҵаҵӷәқәа ишыҟоу еиԥш: «-i -f %F -- %R», уаҟа %F — ашьҭҩы иҭыӡҭыԥ %R — аиуаа "
+"рҭыӡҭыԥ"
+
+msgid "Error parsing commandline options: %s "
+msgstr "Адҵатә цәаҳәа ахышәарақәа реилыргара залымшахеит : %s "
+
+msgid "Failed to execute %s "
+msgstr "%s аҿакра залымшахеит "
+
+msgid "gnome-disk-utility %s UDisks %s (built against %d.%d.%d)"
+msgstr "gnome-disk-utility %s UDisks %s (аизга %d.%d.%d аҟынтә)"
+
+msgid "GNU General Public License version 3 or later"
+msgstr "GNU General Public License аверсиа 3 мамзар еиҳа иҿыцу "
+
+msgid "Hardware address:%s "
+msgstr "Аппараттә ҭыӡҭыԥ:        %s"
+
+msgid ""
+"I want to play that game! You know, they all light-up and you click on them "
+"and they vanish!"
+msgstr ""
+"Сара исҭахуп абри ахәмарра сыхәмарырц! Урҭ зегьы лашоит нас иӡоит "
+"шәанрыцәхасуа."
+
+msgid "Leaving %d blockquote. msgid_plural: Leaving %d blockquotes."
+msgstr ""
+"msgstr[0]: Аҭыҵра  %d ацитатаагара аидкыла аҟынтә. msgstr[1]: Аҭыҵра  %d "
+"ацитатаагара аидкыла аҟынтә. msgstr[2]: Аҭыҵра  %d ацитатаагара аидкыла "
+"аҟынтә."
+
+msgid "Leaving %d list. msgid_plural: Leaving %d lists."
+msgstr ""
+"msgstr[0]: Ахьӡынҵақәа %d рҟынтә аҭыҵра. msgstr[1]: Ахьӡынҵақәа %d рҟынтә "
+"аҭыҵра. msgstr[2]: Ахьӡынҵақәа %d рҟынтә аҭыҵра."
+
+msgid "Level: %d Score: %d"
+msgstr "Аҩаӡара: %d  Аԥхьаӡара: %d"
+
+msgid "Maximum value must be greater than minimum value. "
+msgstr "Имаксималу аҵакы иминималу аасҭа еиҳазароуп"
+
+msgid "MTU:%s "
+msgstr "MTU:%s "
+
+msgid "Multicast:%s "
+msgstr "Multicast:%s "
+
+msgid ""
+"nested math table with %d row msgid_plural: nested math table with %d rows"
+msgstr ""
+"msgstr[0]:Иагәылаҵоу аматиматикатә ҭаӡҩыра %d ацәаҳәа змоу msgstr[1]: "
+"Иагәылаҵоу аматиматикатә ҭаӡҩыра %d ацәаҳәақәа змоу msgstr[2]:Иагәылаҵоу "
+"аматиматикатә ҭаӡҩыра %d ацәаҳәақәа змоу"
+
+msgid "No column titles specified for List dialog. "
+msgstr "Ахьӡынҵа аиҿцәажәаразы иарбаӡам аиҵагылақәа рыхқәа   "
+
+msgid ""
+"output %s does not have the same parameters as another cloned output: "
+"existing mode = %d, new mode = %d existing coordinates = (%d, %d), new "
+"coordinates = (%d, %d) existing rotation = %d, new rotation = %d"
+msgstr ""
+"аҭыҵра %s ахышәарақәа  егьи  ахаҭаԥсаҭа  аҭыҵра ахышәарақәа иреиԥшӡам:Иҟоу "
+"арежим = %d, иҿыцу арежим = %d иҟоу акоординатқәа = (%d, %d),  акоординатқәа "
+"ҿыцқәа = (%d, %d) иҟоу агьежьра = %d,  агьежьра ҿыц = %d\""
+
+msgid ""
+"Refusing new client connection because the session is currently being shut "
+"down "
+msgstr ""
+"Иҿыцу аҿакрақәа аклиентцәа рҟынтә мап рыцәкхоит ,избан акәзар асеанс "
+"хырқәшахоит "
+
+msgid "Run “%s --help” to see a full list of available command line options. "
+msgstr ""
+"Инашәыгӡа адҵа «%s --help», ишәзыманшәалоу  адҵатә цәаҳәа алшарақәа "
+"резыкхьӡынҵа нарҭбааны ишәбарц азы. "
+
+msgid "Search for the Contact  or double-click here to create a new Contact."
+msgstr "Ишәыԥшаа аимадара,  мамзар абраҟа шәақәыӷәӷәа аҿыц аԥҵаразы."
+
+msgid ""
+"Secure boot prevents malicious software from being loaded when the device "
+"starts.  For more information, contact the hardware manufacturer or IT "
+"support."
+msgstr ""
+"Ишәарҭадароу аҭагалара аԥхасҭа ҟазҵо апрограмматә еиқәыршәарақәа рҭагалара "
+"ԥнарҟәҟәоит аиҿартәыраадәықәҵараан.  Иацҵаны аинформациа шәоурц азы амаруга "
+"аԥҵаҩы ,мамзар ИТ -ацхыраара амаҵзура шәрыдҵаала."
+
+msgid ""
+"Sign in to authorize access in a web browser. Then fill in the obtained "
+"verification code here in the next step."
+msgstr ""
+"Шәҭала асистема веб-браузер ахь аҭалара хаҭара шьақәыргыларазы.Анаҩс, ишәоуз "
+"агәаҭаратә код абраҟа иҭажәыҩ."
+
+msgid ""
+"The “%s” plugin depends on the “%s” plugin. If you disable “%s”, “%s” will "
+"also be disabled."
+msgstr "Амодуль «%s» ахьԥшоит амодуль «%s». «%s» аҿыхзар, «%s» гьы аҿыххоит"
+
+msgid "The following recipient was not recognized as a valid mail address: {0}"
+msgstr "Анаҩстәи адкылаҩ иԥошьҭа аиашашьа еилкаамхазеит: {0}"
+
+msgid ""
+"The following recipients were not recognized as valid mail addresses: {0}"
+msgstr "Анаҩстәи адкылаҩцәа рԥошьҭақәа риашашьа еилкаамхазеит: {0}"
+
+msgid "The popular Japanese logic puzzle  Puzzles generated by QQwing %s"
+msgstr ""
+"Еицырдыруа аиапониатә алогикатә хыҧҽыга  Ахыҧҽыгақәа аҧҵахоит QQwing %s "
+
+msgid ""
+"There are no items to show in this view.  Double-click here to create a new "
+"Contact."
+msgstr ""
+"Иҟаӡам аелементқәа ари аԥенџьыр аҟны иаарԥшразы.  Ҩынтә абраҟа шәақәыӷәӷәа "
+"аимадара ҿыц аԥҵаразы"
+
+msgid ""
+"There had been added %d attachment. Make sure it does not contain any "
+"sensitive information before sending the message. msgid_plural: There had "
+"been added %d attachments. Make sure they do not contain any sensitive "
+"information before sending the message."
+msgstr ""
+"msgstr[0]: Иацҵан %d аҭаҵа. Ацҳамҭа шәышьҭаанӡа агәра шәга уи ишагәылам "
+"имаӡоу аинформациа.msgstr[1]: Иацҵан %d аҭаҵа. Ацҳамҭа шәышьҭаанӡа агәра "
+"шәга уи ишагәылам имаӡоу аинформациа.msgstr[2]: Иацҵан %d аҭаҵа. Ацҳамҭа "
+"шәышьҭаанӡа агәра шәга уи ишагәылам имаӡоу аинформациа"
+
+msgid ""
+"This might be for a legitimate reason, but the application has not provided "
+"one.  Note that forcing an application to quit might cause data loss."
+msgstr ""
+"Уи ҟалар алшон анажьратә мзызқәа рыбзоурала ,аха аԥшьы иаҳнамҭеитone.  "
+"Шәазхьаԥш, аԥшьы мчыла ахырқәшара иахҟьаны адыррақәа ыӡыр шрылшо."
+
+msgid ""
+"This option is not available. Please see --help for all possible usages. "
+msgstr ""
+"Ари ахышәара ахь анеира азин ыҟаӡам.Шәхы иашәырхәа   --help зеиуахкы шәҭаху "
+"ахышәарақәа рыхәаҧшразы"
+
+msgid "Two or more dialog options specified "
+msgstr "Ҩба, мамзар инеиҳаны ахышәарақәа аиҿцәажәара азы иарбоуп"
+
+msgid "uri: %s "
+msgstr "uri: %s "
+
+msgid "Value out of range. "
+msgstr "Аҵакыра анҭыҵ аҵакы зеиԥшроу"
+
+msgid ""
+"You have received %d new message. msgid_plural: You have received %d new "
+"messages."
+msgstr ""
+"msgstr[0]: Шәара ишәоуит  %d цҳамҭа ҿыцк. msgstr[1]: Шәара ишәоуит %d цҳамҭа "
+"ҿыцк. msgstr[2]: Шәара ишәоуит %d цҳамҭа ҿыцк."
+
+msgid "You may need to select different mail options.  Detailed error: {0}"
+msgstr "Шәара аԥошьҭа егьырҭ ахышәарақәа азалшәхыр акәхоит.  Амзыз: {0}"
+
+msgid ""
+"You must specify at least one folder as a source. Either by selecting the "
+"folders individually, and/or by selecting all local folders, all remote "
+"folders, or both."
+msgstr "Иаҭахуп ҭаӡк еиҳамзаргьы  хыҵхырҭас иашәырбарц."
+
+msgid "You should use only one List dialog type. "
+msgstr "Аиҿцәажәара ахкы заҵәык ауп зхархәара ҟало \"Ахьӡынца\""

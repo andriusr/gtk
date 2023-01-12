@@ -266,6 +266,9 @@
   if (trackingRect)
     {
       [self removeTrackingRect: trackingRect];
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10500
+      [(NSTrackingArea*)trackingRect release];
+#endif
       trackingRect = 0;
     }
 
@@ -326,7 +329,14 @@
   [super viewWillDraw];
 }
 
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10900
 -(BOOL)wantsUpdateLayer
+{
+     return YES;
+}
+#endif
+
+-(BOOL)wantsLayer
 {
      return YES;
 }
@@ -453,7 +463,7 @@ copy_rectangle_argb32 (cairo_surface_t *dest, cairo_surface_t *source,
 
   cairo_surface_destroy (cvpb_surface);
   cairo_region_destroy (bounds_region);
-  _gdk_quartz_unref_cairo_surface (gdk_window);
+  _gdk_quartz_unref_cairo_surface (gdk_window); // reffed in gdk_window_impl_quartz_begin_paint
   CVPixelBufferUnlockBaseAddress (pixels, 0);
   --impl->in_paint_rect_count;
   self.layer.contents = NULL;
@@ -472,13 +482,19 @@ copy_rectangle_argb32 (cairo_surface_t *dest, cairo_surface_t *source,
 {
   GdkWindowImplQuartz *impl = GDK_WINDOW_IMPL_QUARTZ (gdk_window->impl);
   NSRect rect;
-
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10500
+  NSTrackingArea *trackingArea;
+#endif
+  
   if (!impl || !impl->toplevel)
     return;
 
   if (trackingRect)
     {
       [self removeTrackingRect: trackingRect];
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10500
+      [(NSTrackingArea*)trackingRect release];
+#endif
       trackingRect = 0;
     }
 
@@ -490,10 +506,19 @@ copy_rectangle_argb32 (cairo_surface_t *dest, cairo_surface_t *source,
    */
 
   rect = [self bounds];
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10500
+  trackingArea = [[NSTrackingArea alloc] initWithRect: rect
+                  options: NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingCursorUpdate | NSTrackingActiveInActiveApp | NSTrackingInVisibleRect | NSTrackingEnabledDuringMouseDrag
+                  owner: self
+                  userInfo: nil];
+  [self addTrackingArea: trackingArea];
+  trackingRect = (NSInteger)[trackingArea retain];
+#else
   trackingRect = [self addTrackingRect: rect
 		  owner: self
 		  userData: nil
 		  assumeInside: NO];
+#endif
 }
 
 -(void)viewDidMoveToWindow
@@ -509,23 +534,25 @@ copy_rectangle_argb32 (cairo_surface_t *dest, cairo_surface_t *source,
   if (newWindow == nil && trackingRect)
     {
       [self removeTrackingRect: trackingRect];
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10500
+      [(NSTrackingArea*)trackingRect release];
+#endif
       trackingRect = 0;
     }
 }
 
 -(void)createBackingStoreWithWidth: (CGFloat) width andHeight: (CGFloat) height
 {
-  CVReturn rv;
-
   g_return_if_fail (width && height);
 
   CVPixelBufferRelease (pixels);
-  rv = CVPixelBufferCreate (NULL, width, height,
-                            kCVPixelFormatType_32BGRA,
-                            cfpb_props, &pixels);
+  CVPixelBufferCreate (NULL, width, height,
+                       kCVPixelFormatType_32BGRA,
+                       cfpb_props, &pixels);
 
 }
 
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 10700
 -(BOOL)layer:(CALayer*) layer shouldInheritContentsScale: (CGFloat)scale fromWindow: (NSWindow *) window
 {
   if (layer == self.layer && window == self.window)
@@ -535,6 +562,7 @@ copy_rectangle_argb32 (cairo_surface_t *dest, cairo_surface_t *source,
     }
   return YES;
 }
+#endif
 
 -(void)setFrame: (NSRect)frame
 {
